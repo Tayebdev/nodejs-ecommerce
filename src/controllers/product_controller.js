@@ -1,19 +1,21 @@
 const productModel = require("../models/product_model");
-const slugify = require("slugify");
 const asyncHandler = require("express-async-handler");
 const ErrorAPI = require("../utils/ErrorAPI");
+const {
+  deleteOne,
+  createOne,
+  getOne,
+  updateOne,
+} = require("./Factory_Handler");
 
-const createProduct = asyncHandler(async (req, res) => {
-  if (req.body.title) {
-    req.body.slug = slugify(req.body.title);
-  }
-  const Product = new productModel(req.body);
-  const savedProduct = await Product.save();
-  res.status(201).json({
-    status: "success",
-    data: savedProduct,
-  });
-});
+const createProduct = createOne(productModel);
+
+const getProductById = getOne(productModel);
+
+const updateProduct = updateOne(productModel);
+
+const deleteProduct = deleteOne(productModel);
+
 // Pagination
 const getAllProduct = asyncHandler(async (req, res, next) => {
   const page = Number(req.query.page) || 1;
@@ -33,45 +35,6 @@ const getAllProduct = asyncHandler(async (req, res, next) => {
     result: Product.length,
     status: "success",
     data: Product,
-  });
-});
-const getProductById = asyncHandler(async (req, res, next) => {
-  const Product = await productModel.findOne({ _id: req.params.id });
-  if (!Product) {
-    return next(new ErrorAPI("No Product found", 404));
-  }
-  res.status(200).json({
-    status: "success",
-    data: Product,
-  });
-});
-
-const updateProduct = asyncHandler(async (req, res, next) => {
-  if (req.body.title) {
-    req.body.slug = slugify(req.body.title);
-  }
-  const Product = await productModel.findOneAndUpdate(
-    { _id: req.params.id },
-    req.body,
-    { new: true }
-  );
-  if (!Product || Product.length === 0) {
-    return next(new ErrorAPI("No Product found", 404));
-  }
-  res.status(200).json({
-    status: "Productis updated",
-    data: Product,
-  });
-});
-const deleteProduct = asyncHandler(async (req, res, next) => {
-  const Product = await productModel.findOneAndDelete({
-    _id: req.params.id,
-  });
-  if (!Product) {
-    return next(new ErrorAPI("No Product found", 404));
-  }
-  res.status(200).json({
-    status: "Product is deleted",
   });
 });
 
