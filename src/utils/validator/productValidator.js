@@ -82,15 +82,18 @@ exports.createProductValidator = [
       });
     }),
 
-  check("brand").optional().isMongoId().withMessage("Invalid brand ID format"),
-
-  // .custom((brandId) => {
-  //   return BrandModel.findById(brandId).then((brand) => {
-  //     if (!brand) {
-  //       return Promise.reject(new Error(`No brand for this id: ${brandId}`));
-  //     }
-  //   });
-  // })
+  check("brand")
+    .optional()
+    .isMongoId()
+    .withMessage("Invalid brand ID format")
+    .custom((brandId) => {
+      return BrandModel.findById(brandId).then((brand) => {
+        if (!brand) {
+          return Promise.reject(new Error(`No brand for this id: ${brandId}`));
+        }
+      });
+    }),
+    
   check("ratingAverage")
     .optional()
     .isFloat({ min: 1, max: 5 })

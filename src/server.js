@@ -10,6 +10,7 @@ const categoryRouter = require("./routes/category_route");
 const SubCategoryRouter=require('./routes/subCategory_route');
 const brandRouter=require('./routes/brand_route');
 const productRouter=require('./routes/product_route');
+const userRouter=require('./routes/user_route')
 
 
 
@@ -27,6 +28,9 @@ app.use("/api/v1/category", categoryRouter);
 app.use("/api/v1/subCategory", SubCategoryRouter);
 app.use("/api/v1/brand", brandRouter);
 app.use("/api/v1/product", productRouter);
+app.use("/api/v1/user", userRouter);
+
+
 
 app.use((req, res, next) => {
   next(new ErrorAPI(`Can't find ${req.originalUrl} on the server`, 400));

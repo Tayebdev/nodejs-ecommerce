@@ -77,7 +77,8 @@ const updateOne = (model) => {
       return next(new ErrorAPI(`No ${doc.modelName} Found`, 404));
     }
     res.status(200).json({
-      status: `${doc} is Updated`,
+      status: `success`,
+      message:`${model.modelName} is Updated`,
       data: doc,
     });
   });
