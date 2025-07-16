@@ -8,10 +8,10 @@ exports.createUserValidator = [
     .notEmpty()
     .withMessage("User email is required")
     .isEmail()
-    .withMessage("Inavlid email format")
+    .withMessage("Invalid email format")
     .custom(async (value, { req }) => {
-      const email = await userModel.find({ email: req.body.email });
-      if (email) {
+      const user = await userModel.findOne({ email: value });
+      if (user) {
         throw new Error("Email already in use");
       }
       return true;
@@ -21,7 +21,17 @@ exports.createUserValidator = [
     .notEmpty()
     .withMessage("Pssaword is required")
     .isLength({ min: 8 })
-    .withMessage("Password must be at least 6 characters long"),
+    .withMessage("Password must be at least 6 characters long")
+    .custom((password, { req }) => {
+      if (password != req.body.passwordConfirmation) {
+        throw new Error("Password confirmation incorrect");
+      }
+      return true;
+    }),
+
+  check("passwordConfirmation")
+    .notEmpty()
+    .withMessage("PasswordConfirmation id required"),
 
   check("phone")
     .optional()

@@ -6,6 +6,7 @@ const {
   getUserById,
   deleteUser,
   updateUser,
+  changeUserPassword
 } = require("../controllers/user_controller");
 
 const {
@@ -16,6 +17,8 @@ const {
 } = require("../utils/validator/userValidator");
 
 router.route("/").post(createUserValidator, createUser).get(getAllUser);
+
+router.put('/changePassword/:id',changeUserPassword)
 
 router
   .route("/id/:id")
