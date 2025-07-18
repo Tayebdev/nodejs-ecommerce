@@ -2,34 +2,29 @@ const express = require("express");
 const morgan = require("morgan");
 require("dotenv").config();
 const connectDB = require("./config/db");
-const ErrorAPI=require('./utils/ErrorAPI')
-const GlobalError=require("./middlewares/globalError")
-
+const ErrorAPI = require("./utils/ErrorAPI");
+const GlobalError = require("./middlewares/globalError");
 
 const categoryRouter = require("./routes/category_route");
-const SubCategoryRouter=require('./routes/subCategory_route');
-const brandRouter=require('./routes/brand_route');
-const productRouter=require('./routes/product_route');
-const userRouter=require('./routes/user_route')
-
-
+const SubCategoryRouter = require("./routes/subCategory_route");
+const brandRouter = require("./routes/brand_route");
+const productRouter = require("./routes/product_route");
+const userRouter = require("./routes/user_route");
+const authRouter=require('./routes/auth_route')
 
 const app = express();
 app.use(express.json());
-if(process.env.NODE_ENV==='development'){
+if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
-  console.log(`✅ mode:${process.env.NODE_ENV}`)
+  console.log(`✅ mode:${process.env.NODE_ENV}`);
 }
-
-
-
 
 app.use("/api/v1/category", categoryRouter);
 app.use("/api/v1/subCategory", SubCategoryRouter);
 app.use("/api/v1/brand", brandRouter);
 app.use("/api/v1/product", productRouter);
 app.use("/api/v1/user", userRouter);
-
+app.use("/api/v1/auth",authRouter)
 
 
 app.use((req, res, next) => {

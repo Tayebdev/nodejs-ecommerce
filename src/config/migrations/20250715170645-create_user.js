@@ -39,6 +39,11 @@ module.exports = {
               bsonType: "string",
               description: "Profile image URL (optional)",
             },
+            passwordChangedAt: {
+              bsonType: ["date", "null"],
+              description:
+                "The date when the password was last changed (optional)",
+            },
           },
         },
       },

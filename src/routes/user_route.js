@@ -14,11 +14,12 @@ const {
   getUserValidator,
   deleteUserValidator,
   updateUserValidator,
+  updateUserPasswordValidator
 } = require("../utils/validator/userValidator");
 
 router.route("/").post(createUserValidator, createUser).get(getAllUser);
 
-router.put('/changePassword/:id',changeUserPassword)
+router.put('/changePassword/:id',updateUserPasswordValidator,changeUserPassword)
 
 router
   .route("/id/:id")

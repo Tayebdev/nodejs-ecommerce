@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const {
+  createCategoryValidator,
   getCategoryValidatorById,
   getCategoryValidatorByName,
   updateCategoryValidator,
@@ -15,7 +16,9 @@ const {
   deleteCategory,
 } = require("../controllers/category_controller");
 
-router.route("/").post(createCategory).get(getAllCategory);
+const {verifyToken}=require('../middlewares/authMiddleware')
+
+router.route("/").post(verifyToken,createCategoryValidator,createCategory).get(getAllCategory);
 
 router
   .route("/id/:id")

@@ -37,12 +37,11 @@ const updateUser = asyncHandler(async (req, res, next) => {
 });
 
 const changeUserPassword = asyncHandler(async (req, res, next) => {
-  if (req.body.name) {
-    req.body.slug = slugify(req.body.name);
-  }
   const User = await userModel.findOneAndUpdate(
     { _id: req.params.id },
-    { password: await bcrypt.hash(req.body.password, 12) },
+    { password: await bcrypt.hash(req.body.password, 12),
+      passwordChangedAt:Date.now()
+     },
     { new: true }
   );
   if (!User || User.length === 0) {

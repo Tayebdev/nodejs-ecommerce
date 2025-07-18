@@ -14,7 +14,7 @@ exports.getCategoryValidatorByName = [
   runValidation,
 ];
 
-exports.createCategory = [
+exports.createCategoryValidator = [
   check("name")
     .notEmpty()
     .withMessage("category name is required")
