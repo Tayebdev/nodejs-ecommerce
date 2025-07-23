@@ -39,6 +39,15 @@ module.exports = {
               bsonType: "string",
               description: "Profile image URL (optional)",
             },
+            passwordResetExpires:{
+              bsonType:"date"
+            },
+            passwordResetCode:{
+              bsonType:'string'
+            },
+            passwordResetVerified:{
+              bsonType:"bool"
+            },
             passwordChangedAt: {
               bsonType: ["date", "null"],
               description:

@@ -5,7 +5,7 @@ const {
   getCategoryValidatorById,
   getCategoryValidatorByName,
   updateCategoryValidator,
-  deleteCategoryValidator
+  deleteCategoryValidator,
 } = require("../utils/validator/categoryValidator");
 const {
   createCategory,
@@ -16,15 +16,33 @@ const {
   deleteCategory,
 } = require("../controllers/category_controller");
 
-const {verifyToken}=require('../middlewares/authMiddleware')
+const { verifyToken, allowedTo } = require("../middlewares/authMiddleware");
 
-router.route("/").post(verifyToken,createCategoryValidator,createCategory).get(getAllCategory);
+router
+  .route("/")
+  .post(
+    verifyToken,
+    allowedTo("admin", "manager"),
+    createCategoryValidator,
+    createCategory
+  )
+  .get(getAllCategory);
 
 router
   .route("/id/:id")
   .get(getCategoryValidatorById, getCategoryById)
-  .put(updateCategoryValidator,updateCatgeory)
-  .delete(deleteCategoryValidator,deleteCategory);
+  .put(
+    verifyToken,
+    allowedTo("admin", "manager"),
+    updateCategoryValidator,
+    updateCatgeory
+  )
+  .delete(
+    verifyToken,
+    allowedTo("admin", "manager"),
+    deleteCategoryValidator,
+    deleteCategory
+  );
 
 router.get("/name/:name", getCategoryValidatorByName, getCategoryByName);
 

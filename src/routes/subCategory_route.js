@@ -5,7 +5,7 @@ const {
   getSubCategoryValidatorById,
   getSubCategoryValidatorByCategoryId,
   deleteSubCategoryValidator,
-  updateSubCategoryValidator
+  updateSubCategoryValidator,
 } = require("../utils/validator/SubCategoryValidator");
 const {
   createSubCategory,
@@ -15,16 +15,32 @@ const {
   getSubCategoryById,
   getSubCategoryByCategoryId,
 } = require("../controllers/subCategory_controller");
+const { verifyToken, allowedTo } = require("../middlewares/authMiddleware");
 
 router
   .route("/")
-  .post(createSubCategoryValidator, createSubCategory)
+  .post(
+    verifyToken,
+    allowedTo("admin", "manager"),
+    createSubCategoryValidator,
+    createSubCategory
+  )
   .get(getAllSubCategory);
 router
   .route("/id/:id")
   .get(getSubCategoryValidatorById, getSubCategoryById)
-  .put(updateSubCategoryValidator,updateSubCategory)
-  .delete(deleteSubCategoryValidator,deleteSubCategory);
+  .put(
+    verifyToken,
+    allowedTo("admin", "manager"),
+    updateSubCategoryValidator,
+    updateSubCategory
+  )
+  .delete(
+    verifyToken,
+    allowedTo("admin", "manager"),
+    deleteSubCategoryValidator,
+    deleteSubCategory
+  );
 
 router
   .route("/category/:category")

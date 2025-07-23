@@ -14,7 +14,17 @@ const {
   deleteBrand,
 } = require("../controllers/brand_controller");
 
-router.route("/").get(getAllBrand).post(createBrandValidator, createBrand);
+const { verifyToken, allowedTo } = require("../middlewares/authMiddleware");
+
+router
+  .route("/")
+  .get(getAllBrand)
+  .post(
+    verifyToken,
+    allowedTo("admin", "manager"),
+    createBrandValidator,
+    createBrand
+  );
 router
   .route("/id/:id")
   .get(getBrandByIdValidator, getBrandById)

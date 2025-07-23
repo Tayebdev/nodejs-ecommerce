@@ -3,6 +3,9 @@ const asyncHandler = require("express-async-handler");
 const ErrorAPI = require("../utils/ErrorAPI");
 const { generateAccessToken } = require("../utils/generate_Token");
 const bcrypt = require("bcryptjs");
+const crypto = require("crypto");
+const sendEmail = require("../utils/sendEmail");
+const { htmlMessage } = require("../utils/messageEmail");
 
 const signUp = asyncHandler(async (req, res, next) => {
   const { name, email, phone, role, password } = req.body;
@@ -45,9 +48,47 @@ const logIn = asyncHandler(async (req, res, next) => {
   });
 });
 
-
+const forgotPassword = asyncHandler(async (req, res, next) => {
+  // 1) Get user by email
+  const user = await userModel.findOne({ email: req.body.email });
+  if (!user) {
+    return next(
+      new ErrorAPI(`There is no user with that email ${req.body.email}`, 404)
+    );
+  }
+  // 2) If user exist, Generate hash reset random 6 digits and save it in db
+  const resetCode = Math.floor(100000 + Math.random() * 900000).toString();
+  const hashedResetCode = crypto
+    .createHash("sha256")
+    .update(resetCode)
+    .digest("hex");
+  // Save hashed password reset code into db
+  user.passwordResetCode = hashedResetCode;
+  // Add expiration time for password reset code (10 min)
+  user.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+  user.passwordResetVerified = false;
+  await user.save();
+  // 3) Send the reset code via email
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: "Your password reset code",
+      html: htmlMessage(user.name, resetCode),
+    });
+  } catch (err) {
+    user.passwordResetCode = undefined;
+    user.passwordResetExpires = undefined;
+    user.passwordResetVerified = undefined;
+    await user.save();
+    return next(new ErrorAPI("There is an error in sending email", 500));
+  }
+  res
+    .status(200)
+    .json({ status: "Success", message: `Reset code sent to email` });
+});
 
 module.exports = {
   signUp,
   logIn,
+  forgotPassword,
 };

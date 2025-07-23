@@ -55,3 +55,12 @@ exports.verifyToken = asyncHandler(async (req, res, next) => {
   req.user = currentUser;
   next();
 });
+
+exports.allowedTo =(...roles)=>asyncHandler((req,res,next)=>{
+    // 1) access roles
+    // 2) access registered user (req.user.role)
+    if(!roles.includes(req.user.role)){
+      return next(new ErrorAPI("You are not allowed to access this route",403))
+    }
+    next();
+})
