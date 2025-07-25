@@ -87,8 +87,65 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
     .json({ status: "Success", message: `Reset code sent to email` });
 });
 
+const verifyPassResetCode = asyncHandler(async (req, res, next) => {
+  // 1) Get user based on reset code
+  const hashedResetCode = crypto
+    .createHash("sha256")
+    .update(req.body.passwordResetCode)
+    .digest("hex");
+
+  const user = await userModel.findOne({
+    passwordResetCode: hashedResetCode,
+    passwordResetExpires: { $gt: Date.now() },
+  });
+
+  if (!user) {
+    return next(new ErrorAPI("Reset code invalid or expired", 400));
+  }
+
+  // 2) Reset code valid
+  user.passwordResetVerified = true;
+  await user.save();
+
+  res.status(200).json({
+    status: "success",
+    message: "Reset code verified. You can now reset your password.",
+  });
+});
+
+const resetPassword = asyncHandler(async (req, res, next) => {
+  // 1) Get user based on email
+  const user = await userModel.findOne({ email: req.body.email });
+
+  if (!user) {
+    return next(
+      new ErrorAPI(`There is no user with email ${req.body.email}`, 404)
+    );
+  }
+  // 2) Check if reset code verified
+  if (!user.passwordResetVerified) {
+    return next(new ErrorAPI("Reset code not verified", 400));
+  }
+  user.password = req.body.newPassword;
+  user.passwordResetCode = undefined;
+  user.passwordResetExpires = undefined;
+  user.passwordResetVerified = undefined;
+  await user.save();
+  // 3) if everything is ok, generate token
+  const token = generateAccessToken({
+    _id: user.id,
+    role: user.role,
+    name: user.name,
+    email: user.email,
+    phone: user.phone,
+  });
+  res.status(200).json({ token });
+});
+
 module.exports = {
   signUp,
   logIn,
   forgotPassword,
+  verifyPassResetCode,
+  resetPassword
 };

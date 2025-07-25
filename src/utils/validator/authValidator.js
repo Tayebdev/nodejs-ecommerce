@@ -78,3 +78,24 @@ exports.loginValidator = [
 
   runValidation,
 ];
+
+exports.resetPasswordValidator = [
+  check("newPassword")
+    .notEmpty()
+    .withMessage("Password required")
+    .isLength({ min: 6 })
+    .withMessage("Password must be at least 6 characters"),
+
+  check("passwordConfirm")
+    .notEmpty()
+    .withMessage("Password confirmation required"),
+  
+  check("newPassword").custom((newPassword, { req }) => {
+    if (newPassword !== req.body.passwordConfirm) {
+      throw new Error("Password confirmation does not match new password");
+    }
+    return true;
+  }),
+  runValidation
+];
+

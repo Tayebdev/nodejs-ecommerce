@@ -13,7 +13,7 @@ const userRouter = require("./routes/user_route");
 const authRouter=require('./routes/auth_route')
 
 const app = express();
-app.use(express.json());
+app.use(express.json({ limit: '20kb' }));
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
   console.log(`✅ mode:${process.env.NODE_ENV}`);
