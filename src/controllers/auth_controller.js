@@ -123,6 +123,33 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
     .json({ status: "Success", message: `Reset code sent to email` });
 });
 
+const verifyEmailCode = asyncHandler(async (req, res, next) => {
+  const hashedVerifyCode = crypto
+    .createHash("sha256")
+    .update(req.body.emailVerifiedCode)
+    .digest("hex");
+
+  const user = await userModel.findOneAndUpdate(
+    {
+      email: req.body.email,
+      emailVerifiedCode: hashedVerifyCode,
+    },
+    {
+      emailVerified: true,
+      emailVerifiedCode: undefined,
+    },
+    { new: true }
+  );
+
+  if (!user) {
+    return next(new ErrorAPI("Verification code invalid or expired", 400));
+  }
+  res.status(200).json({
+    status: "success",
+    message: "Email verified successfully.",
+  });
+});
+
 const verifyPassResetCode = asyncHandler(async (req, res, next) => {
   // 1) Get user based on reset code
   const hashedResetCode = crypto
@@ -184,4 +211,5 @@ module.exports = {
   forgotPassword,
   verifyPassResetCode,
   resetPassword,
+  verifyEmailCode,
 };
