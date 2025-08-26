@@ -11,13 +11,11 @@ const getAllUser = getAll(userModel);
 const getUserById = getOne(userModel);
 
 const updateUser = asyncHandler(async (req, res, next) => {
-  if (req.body.name) {
-    req.body.slug = slugify(req.body.name);
-  }
   const User = await userModel.findOneAndUpdate(
     { _id: req.params.id },
     {
-      name: req.body.name,
+      lastName: req.body.lastName,
+      firstName:req.body.firstName,
       slug: req.body.slug,
       email: req.body.email,
       phone: req.body.phone,

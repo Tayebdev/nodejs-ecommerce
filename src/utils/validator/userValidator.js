@@ -5,7 +5,8 @@ const slugify = require("slugify");
 const bcrypt = require("bcryptjs");
 
 exports.createUserValidator = [
-  check("name").notEmpty().withMessage("User name is required"),
+  check("firstName").notEmpty().withMessage("User firstName is required"),
+  check("lastName").notEmpty().withMessage("User lastName is required"),
 
   check("email")
     .notEmpty()

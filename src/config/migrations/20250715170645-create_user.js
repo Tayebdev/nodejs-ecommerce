@@ -9,17 +9,21 @@ module.exports = {
       validator: {
         $jsonSchema: {
           bsonType: "object",
-          required: ["name", "email", "password", "role"],
+          required: ["firstName", "lastName", "email", "password", "role"],
           properties: {
-            name: {
+            firstName: {
               bsonType: "string",
-              description: "User name is required",
+              description: "User firstName is required",
+              minLength: 3,
+            },
+            lastName: {
+              bsonType: "string",
+              description: "User lastName is required",
               minLength: 3,
             },
             email: {
               bsonType: "string",
               description: "User email is required",
-              // NOTE: uniqueness must be enforced via index (not here)
             },
             password: {
               bsonType: "string",
@@ -39,14 +43,20 @@ module.exports = {
               bsonType: "string",
               description: "Profile image URL (optional)",
             },
-            passwordResetExpires:{
-              bsonType:"date"
+            passwordResetExpires: {
+              bsonType: "date",
             },
-            passwordResetCode:{
-              bsonType:'string'
+            passwordResetCode: {
+              bsonType: "string",
             },
-            passwordResetVerified:{
-              bsonType:"bool"
+            passwordResetVerified: {
+              bsonType: "bool",
+            },
+            emailVerified: {
+              bsonType: "bool",
+            },
+            emailVerifiedCode: {
+              bsonType: "string",
             },
             passwordChangedAt: {
               bsonType: ["date", "null"],

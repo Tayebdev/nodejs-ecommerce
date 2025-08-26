@@ -1,18 +1,19 @@
 const { check } = require("express-validator");
 const { runValidation } = require("../../middlewares/validatorMiddleware");
-const slugify = require("slugify");
 const User = require("../../models/user_model");
 
 exports.signupValidator = [
-  check("name")
+  check("firstName")
     .notEmpty()
-    .withMessage("User required")
+    .withMessage("User fisrtName required")
     .isLength({ min: 3 })
-    .withMessage("Too short User name")
-    .custom((val, { req }) => {
-      req.body.slug = slugify(val);
-      return true;
-    }),
+    .withMessage("Too short User name"),
+
+  check("lastName")
+    .notEmpty()
+    .withMessage("User lastName required")
+    .isLength({ min: 3 })
+    .withMessage("Too short User name"),
 
   check("email")
     .notEmpty()
@@ -89,13 +90,12 @@ exports.resetPasswordValidator = [
   check("passwordConfirm")
     .notEmpty()
     .withMessage("Password confirmation required"),
-  
+
   check("newPassword").custom((newPassword, { req }) => {
     if (newPassword !== req.body.passwordConfirm) {
       throw new Error("Password confirmation does not match new password");
     }
     return true;
   }),
-  runValidation
+  runValidation,
 ];
-

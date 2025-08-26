@@ -13,7 +13,7 @@ const sendEmail = async (options) => {
   });
 
   const mailOpts = {
-    from: "E-shop App <ttayeb769@gmail.com>",
+    from: "Trendify App <ttayeb769@gmail.com>",
     to: options.email,
     subject: options.subject,
     html: options.html,

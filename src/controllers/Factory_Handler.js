@@ -18,9 +18,6 @@ const deleteOne = (model) => {
 
 const createOne = (model) => {
   return asyncHandler(async (req, res) => {
-    if (req.body.name) {
-      req.body.slug = slugify(req.body.name);
-    }
     if (req.body.title) {
       req.body.slug = slugify(req.body.title);
     }
@@ -64,9 +61,6 @@ const updateOne = (model) => {
   return asyncHandler(async (req, res, next) => {
     if (req.body.title) {
       req.body.slug = slugify(req.body.title);
-    }
-    if (req.body.name) {
-      req.body.slug = slugify(req.body.name);
     }
     const doc = await model.findOneAndUpdate(
       { _id: req.params.id },

@@ -5,22 +5,58 @@ const { generateAccessToken } = require("../utils/generate_Token");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const sendEmail = require("../utils/sendEmail");
-const { htmlMessage } = require("../utils/messageEmail");
+const {
+  htmlMessageResetCode,
+  htmlMessageverifyEmail,
+} = require("../utils/messageEmail");
 
 const signUp = asyncHandler(async (req, res, next) => {
-  const { name, email, phone, role, password } = req.body;
-  const user = await userModel({ name, email, phone, role, password });
+  const { firstName, lastName, email, phone, role, password } = req.body;
+  const user = await userModel({
+    firstName,
+    lastName,
+    email,
+    phone,
+    role,
+    password,
+  });
+
+  const verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
+
+  const hashedVerifyCode = crypto
+    .createHash("sha256")
+    .update(verifyCode)
+    .digest("hex");
+  user.emailVerifiedCode = hashedVerifyCode;
+
   const savedUser = await user.save();
+
+  try {
+    await sendEmail({
+      email: user.email,
+      subject:
+        "A verification code has been sent to your email. Please check your inbox to verify your account.",
+      html: htmlMessageverifyEmail(user.firstName, user.lastName, verifyCode),
+    });
+  } catch (err) {
+    user.emailVerifiedCode = undefined;
+    await user.save();
+    return next(new ErrorAPI("There is an error in sending email", 500));
+  }
 
   const token = generateAccessToken({
     _id: user.id,
     role: user.role,
-    name: user.name,
+    firstName: user.firstName,
+    lastName: user.lastName,
     email: user.email,
     phone: user.phone,
   });
+
   res.status(201).json({
     status: "success",
+    messge:
+      "A verification code has been sent to your email. Please check your inbox to verify your account.",
     data: savedUser,
     token,
   });
@@ -73,7 +109,7 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
     await sendEmail({
       email: user.email,
       subject: "Your password reset code",
-      html: htmlMessage(user.name, resetCode),
+      html: htmlMessageResetCode(user.name, resetCode),
     });
   } catch (err) {
     user.passwordResetCode = undefined;
@@ -147,5 +183,5 @@ module.exports = {
   logIn,
   forgotPassword,
   verifyPassResetCode,
-  resetPassword
+  resetPassword,
 };
