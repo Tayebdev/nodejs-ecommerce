@@ -47,11 +47,6 @@ exports.createUserValidator = [
     .isIn(["user", "admin"])
     .withMessage("Role must be either user or admin"),
 
-  check("profileImg")
-    .optional()
-    .isString()
-    .withMessage("Invalid profile image URL"),
-
   runValidation,
 ];
 

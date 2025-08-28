@@ -18,6 +18,9 @@ const deleteOne = (model) => {
 
 const createOne = (model) => {
   return asyncHandler(async (req, res) => {
+    if (req.file) {
+      req.body.profileImg = req.file.filename;
+    }
     if (req.body.title) {
       req.body.slug = slugify(req.body.title);
     }
@@ -62,17 +65,15 @@ const updateOne = (model) => {
     if (req.body.title) {
       req.body.slug = slugify(req.body.title);
     }
-    const doc = await model.findOneAndUpdate(
-      { _id: req.params.id },
-      req.body,
-      { new: true }
-    );
+    const doc = await model.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+    });
     if (!doc || doc.length === 0) {
       return next(new ErrorAPI(`No ${doc.modelName} Found`, 404));
     }
     res.status(200).json({
       status: `success`,
-      message:`${model.modelName} is Updated`,
+      message: `${model.modelName} is Updated`,
       data: doc,
     });
   });
@@ -83,5 +84,5 @@ module.exports = {
   createOne,
   getOne,
   getAll,
-  updateOne
+  updateOne,
 };

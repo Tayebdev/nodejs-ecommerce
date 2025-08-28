@@ -12,6 +12,7 @@ const {
 
 const signUp = asyncHandler(async (req, res, next) => {
   const { firstName, lastName, email, phone, role, password } = req.body;
+  const profileImg = "users-profile.jpeg";
   const user = await userModel({
     firstName,
     lastName,
@@ -19,6 +20,7 @@ const signUp = asyncHandler(async (req, res, next) => {
     phone,
     role,
     password,
+    profileImg,
   });
 
   const verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
@@ -63,13 +65,31 @@ const signUp = asyncHandler(async (req, res, next) => {
 });
 
 const logIn = asyncHandler(async (req, res, next) => {
-  // 1) check if password and email in the body (validation)
-  // 2) check if user exist & check if password is correct
-  const user = await userModel.findOne({ email: req.body.email });
-  if (!user || !(await bcrypt.compare(req.body.password, user.password))) {
+  const { email, password } = req.body;
+
+  // 1) Check if email and password exist in body
+  if (!email || !password) {
+    return next(new ErrorAPI("Please provide email and password", 400));
+  }
+
+  // 2) Check if user exists
+  const user = await userModel.findOne({ email });
+  if (!user) {
     return next(new ErrorAPI("Incorrect email or password", 401));
   }
-  // 3) generate token
+
+  // 3) Check if email is verified
+  if (!user.emailVerified) {
+    return next(new ErrorAPI("User email not verified", 401));
+  }
+
+  // 4) Check if password is correct
+  const isPasswordCorrect = await bcrypt.compare(password, user.password);
+  if (!isPasswordCorrect) {
+    return next(new ErrorAPI("Incorrect email or password", 401));
+  }
+
+  // 5) Generate token
   const token = generateAccessToken({
     _id: user.id,
     role: user.role,
@@ -77,6 +97,7 @@ const logIn = asyncHandler(async (req, res, next) => {
     email: user.email,
     phone: user.phone,
   });
+
   res.status(200).json({
     status: "success",
     data: user,

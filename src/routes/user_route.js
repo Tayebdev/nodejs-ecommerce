@@ -1,12 +1,14 @@
 const express = require("express");
 const router = express.Router();
+const { uploadImage } = require("../middlewares/imageMiddleware");
+const { resizeImage } = require("../middlewares/resizeMiddleware");
 const {
   createUser,
   getAllUser,
   getUserById,
   deleteUser,
   updateUser,
-  changeUserPassword
+  changeUserPassword,
 } = require("../controllers/user_controller");
 
 const {
@@ -14,17 +16,30 @@ const {
   getUserValidator,
   deleteUserValidator,
   updateUserValidator,
-  updateUserPasswordValidator
+  updateUserPasswordValidator,
 } = require("../utils/validator/userValidator");
 
-router.route("/").post(createUserValidator, createUser).get(getAllUser);
 
-router.put('/changePassword/:id',updateUserPasswordValidator,changeUserPassword)
+router
+  .route("/")
+  .post(
+    uploadImage().single("profileImg"),
+    resizeImage(96, 96, "users"),
+    createUserValidator,
+    createUser
+  )
+  .get(getAllUser);
+
+router.put(
+  "/changePassword/:id",
+  updateUserPasswordValidator,
+  changeUserPassword
+);
 
 router
   .route("/id/:id")
   .get(getUserValidator, getUserById)
-  .delete(deleteUserValidator,deleteUser)
-  .put(updateUserValidator,updateUser);
+  .delete(deleteUserValidator, deleteUser)
+  .put(updateUserValidator, updateUser);
 
 module.exports = router;
