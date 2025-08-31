@@ -73,7 +73,7 @@ const logIn = asyncHandler(async (req, res, next) => {
   }
 
   // 2) Check if user exists
-  const user = await userModel.findOne({ email });
+  const user = await userModel.findOne({ email, emailVerified: true });
   if (!user) {
     return next(new ErrorAPI("Incorrect email or password", 401));
   }
@@ -93,7 +93,8 @@ const logIn = asyncHandler(async (req, res, next) => {
   const token = generateAccessToken({
     _id: user.id,
     role: user.role,
-    name: user.name,
+    firstName: user.firstName,
+    lastName: user.lastName,
     email: user.email,
     phone: user.phone,
   });
@@ -222,7 +223,8 @@ const resetPassword = asyncHandler(async (req, res, next) => {
   const token = generateAccessToken({
     _id: user.id,
     role: user.role,
-    name: user.name,
+    firstName: user.firstName,
+    lastName: user.lastName,
     email: user.email,
     phone: user.phone,
   });
