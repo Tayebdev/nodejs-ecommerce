@@ -23,7 +23,7 @@ const signUp = asyncHandler(async (req, res, next) => {
     profileImg,
   });
 
-  const verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
+  const verifyCode = Math.floor(1000 + Math.random() * 9000).toString();
 
   const hashedVerifyCode = crypto
     .createHash("sha256")
@@ -107,14 +107,17 @@ const logIn = asyncHandler(async (req, res, next) => {
 
 const forgotPassword = asyncHandler(async (req, res, next) => {
   // 1) Get user by email
-  const user = await userModel.findOne({ email: req.body.email });
+  const user = await userModel.findOne({
+    email: req.body.email,
+    emailVerified: true,
+  });
   if (!user) {
     return next(
       new ErrorAPI(`There is no user with that email ${req.body.email}`, 404)
     );
   }
   // 2) If user exist, Generate hash reset random 6 digits and save it in db
-  const resetCode = Math.floor(100000 + Math.random() * 900000).toString();
+  const resetCode = Math.floor(1000 + Math.random() * 9000).toString();
   const hashedResetCode = crypto
     .createHash("sha256")
     .update(resetCode)
@@ -130,7 +133,7 @@ const forgotPassword = asyncHandler(async (req, res, next) => {
     await sendEmail({
       email: user.email,
       subject: "Your password reset code",
-      html: htmlMessageResetCode(user.name, resetCode),
+      html: htmlMessageResetCode(user.firstName, user.lastName, resetCode),
     });
   } catch (err) {
     user.passwordResetCode = undefined;
@@ -163,7 +166,7 @@ const verifyEmailCode = asyncHandler(async (req, res, next) => {
   );
 
   if (!user) {
-    return next(new ErrorAPI("Verification code invalid or expired", 400));
+    return next(new ErrorAPI("Verification code invalid or expired", 404));
   }
   res.status(200).json({
     status: "success",
