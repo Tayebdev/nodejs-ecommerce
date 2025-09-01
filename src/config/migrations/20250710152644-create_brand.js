@@ -13,7 +13,10 @@ module.exports = {
           properties: {
             name: { bsonType: "string", description: "Brand name is required" },
             slug: { bsonType: "string" },
-            image: { bsonType: "string" },
+            image: {
+              bsonType: "string",
+              description: "Brand image URL (optional)",
+            },
           },
         },
       },

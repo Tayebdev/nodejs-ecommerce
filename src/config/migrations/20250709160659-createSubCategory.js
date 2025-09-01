@@ -20,8 +20,12 @@ module.exports = {
               description: "Slug must be a string",
             },
             category: {
-              bsonType: "objectId", 
+              bsonType: "objectId",
               description: "Must be a reference to Category",
+            },
+            image: {
+              bsonType: "string",
+              description: "SubCategory image URL (optional)",
             },
           },
         },
@@ -29,7 +33,9 @@ module.exports = {
     });
 
     // Optional: create index for uniqueness
-    await db.collection("SubCategory").createIndex({ name: 1 }, { unique: true });
+    await db
+      .collection("SubCategory")
+      .createIndex({ name: 1 }, { unique: true });
   },
 
   /**

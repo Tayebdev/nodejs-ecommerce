@@ -5,18 +5,24 @@ module.exports = {
    * @returns {Promise<void>}
    */
   async up(db, client) {
-    await db.createCollection('Category', {
+    await db.createCollection("Category", {
       validator: {
         $jsonSchema: {
-          bsonType: 'object',
-          required: ['name'],
+          bsonType: "object",
+          required: ["name"],
           properties: {
-            name: { bsonType: 'string',description: 'Category name is required' },
-            slug: {bsonType:'string'},
-            image: {bsonType:'string'}
-          }
-        }
-      }
+            name: {
+              bsonType: "string",
+              description: "Category name is required",
+            },
+            slug: { bsonType: "string" },
+            image: {
+              bsonType: "string",
+              description: "Profile image URL (optional)",
+            },
+          },
+        },
+      },
     });
   },
 
@@ -26,6 +32,6 @@ module.exports = {
    * @returns {Promise<void>}
    */
   async down(db, client) {
-    await db.collection('Category').drop();
-  }
+    await db.collection("Category").drop();
+  },
 };

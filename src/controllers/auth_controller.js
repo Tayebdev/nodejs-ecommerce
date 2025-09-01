@@ -12,7 +12,7 @@ const {
 
 const signUp = asyncHandler(async (req, res, next) => {
   const { firstName, lastName, email, phone, role, password } = req.body;
-  const profileImg = "users-profile.jpeg";
+  const image = "users-profile.jpeg";
   const user = await userModel({
     firstName,
     lastName,
@@ -20,7 +20,7 @@ const signUp = asyncHandler(async (req, res, next) => {
     phone,
     role,
     password,
-    profileImg,
+    image,
   });
 
   const verifyCode = Math.floor(1000 + Math.random() * 9000).toString();

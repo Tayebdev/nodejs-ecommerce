@@ -39,7 +39,7 @@ module.exports = {
               enum: ["user", "admin"],
               description: "User role is required",
             },
-            profileImg: {
+            image: {
               bsonType: "string",
               description: "Profile image URL (optional)",
             },

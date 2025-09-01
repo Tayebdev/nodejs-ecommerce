@@ -19,11 +19,14 @@ const subCategorySchema = new mongoose.Schema(
       ref: "Category",
       required: [true, "Category reference is required"],
     },
+    image: {
+      type: String,
+    },
   },
   {
     timestamps: true,
     collection: "SubCategory",
   }
 );
-const subCategoryModel=mongoose.model("SubCategory", subCategorySchema);
+const subCategoryModel = mongoose.model("SubCategory", subCategorySchema);
 module.exports = subCategoryModel;

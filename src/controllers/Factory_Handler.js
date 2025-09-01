@@ -19,7 +19,7 @@ const deleteOne = (model) => {
 const createOne = (model) => {
   return asyncHandler(async (req, res) => {
     if (req.file) {
-      req.body.profileImg = req.file.filename;
+      req.body.image = req.file.filename;
     }
     if (req.body.title) {
       req.body.slug = slugify(req.body.title);
