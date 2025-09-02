@@ -20,8 +20,8 @@ const { verifyToken, allowedTo } = require("../middlewares/authMiddleware");
 router
   .route("/")
   .post(
-    verifyToken,
-    allowedTo("admin", "manager"),
+    // verifyToken,
+    // allowedTo("admin", "manager"),
     createSubCategoryValidator,
     createSubCategory
   )

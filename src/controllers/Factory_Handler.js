@@ -35,7 +35,7 @@ const createOne = (model) => {
 
 const getOne = (model) => {
   return asyncHandler(async (req, res, next) => {
-    const doc = await model.findOne({ _id: req.params.id });
+    const doc = await model.find().sort({ name: 1 });
     if (!doc || doc.length === 0) {
       return next(new ErrorAPI(`Not ${model.modelName} found`, 404));
     }

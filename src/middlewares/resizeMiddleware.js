@@ -8,7 +8,7 @@ exports.resizeImage = (width, height, folderName) =>
       return next();
     }
 
-    const filename = `${folderName}-${uuidv4()}-${Date.now()}.jpeg`;
+    const filename = `${folderName}-${uuidv4()}-${Date.now()}.png`;
 
     const fs = require("fs");
     const path = require("path");
@@ -19,9 +19,10 @@ exports.resizeImage = (width, height, folderName) =>
 
     await sharp(req.file.buffer)
       .resize(width, height)
-      .toFormat("jpeg")
-      .jpeg({ quality: 90 })
-      .toFile(path.join(uploadPath, filename));
+      .png({ quality: 90 })
+      .toFile(
+        path.join(uploadPath, filename.replace(/\.[^/.]+$/, "") + ".png")
+      );
 
     req.file.filename = filename;
     req.file.resizedPath = path.join(uploadPath, filename);

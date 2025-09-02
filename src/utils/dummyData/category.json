@@ -1,0 +1,128 @@
+[
+  {
+    "_id": "68b7261613f3031eb4a4aeb5",
+    "name": "Pet Supplies",
+    "name_ar": "حيوان أليف",
+    "image": "categories-eda4db34-60d8-4a1c-aaf6-e330f2ae556c-1756833302240.png",
+    "createdAt": "2025-09-02T17:15:02.264Z",
+    "updatedAt": "2025-09-02T17:15:02.264Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b7264013f3031eb4a4aeb8",
+    "name": "Tools",
+    "name_ar": "أدوات",
+    "image": "categories-cdb3bd8a-6c9b-46da-9456-d373828ce022-1756833344571.png",
+    "createdAt": "2025-09-02T17:15:44.587Z",
+    "updatedAt": "2025-09-02T17:15:44.587Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b7268013f3031eb4a4aebc",
+    "name": "Electronics",
+    "name_ar": "الإلكترونيات",
+    "image": "categories-dc5aa391-c2bc-48d0-9214-9de29c725b82-1756833408500.png",
+    "createdAt": "2025-09-02T17:16:48.519Z",
+    "updatedAt": "2025-09-02T17:16:48.519Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b7269a13f3031eb4a4aebe",
+    "name": "Clothing",
+    "name_ar": "ملابس",
+    "image": "categories-1783eb13-272c-4d65-98ee-a19f805bfee9-1756833434879.png",
+    "createdAt": "2025-09-02T17:17:14.898Z",
+    "updatedAt": "2025-09-02T17:17:14.898Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b7270913f3031eb4a4aec0",
+    "name": "Furniture",
+    "name_ar": "أثاث",
+    "image": "categories-2dc23bf8-a15a-48c2-8443-996490c6756a-1756833545231.png",
+    "createdAt": "2025-09-02T17:19:05.241Z",
+    "updatedAt": "2025-09-02T17:19:05.241Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b7279013f3031eb4a4aec2",
+    "name": "Kids Essentials",
+    "name_ar": "أساسيات الأطفال",
+    "image": "categories-9582791e-2ba0-4d36-abc1-84d50ce653c4-1756833680851.png",
+    "createdAt": "2025-09-02T17:21:20.873Z",
+    "updatedAt": "2025-09-02T17:21:20.873Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b727b913f3031eb4a4aec4",
+    "name": "Gaming",
+    "name_ar": "الألعاب",
+    "image": "categories-a02548cb-1483-414b-a99e-01e718d567d6-1756833721245.png",
+    "createdAt": "2025-09-02T17:22:01.257Z",
+    "updatedAt": "2025-09-02T17:22:01.257Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b7281413f3031eb4a4aec8",
+    "name": "Automotive",
+    "name_ar": "السيارات",
+    "image": "categories-b1cd4feb-6182-4d4f-963d-882d7a8f2935-1756833812714.png",
+    "createdAt": "2025-09-02T17:23:32.736Z",
+    "updatedAt": "2025-09-02T17:23:32.736Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b7282c13f3031eb4a4aeca",
+    "name": "Wellness",
+    "name_ar": "صحة",
+    "image": "categories-be300852-fb2d-4973-beff-b19fa6613067-1756833836921.png",
+    "createdAt": "2025-09-02T17:23:56.937Z",
+    "updatedAt": "2025-09-02T17:23:56.937Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b7285913f3031eb4a4aecc",
+    "name": "Toys",
+    "name_ar": "ألعاب",
+    "image": "categories-45fa6285-ca63-4b4a-8584-38cc45b4b144-1756833881199.png",
+    "createdAt": "2025-09-02T17:24:41.220Z",
+    "updatedAt": "2025-09-02T17:24:41.220Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b7287613f3031eb4a4aece",
+    "name": "Groceries",
+    "name_ar": "البقالة",
+    "image": "categories-4d7b5e3a-780b-44ea-935a-fc989ba522f1-1756833910791.png",
+    "createdAt": "2025-09-02T17:25:10.810Z",
+    "updatedAt": "2025-09-02T17:25:10.810Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b728a013f3031eb4a4aed0",
+    "name": "Stationery",
+    "name_ar": "الأدوات المكتبية",
+    "image": "categories-390d9803-5329-404f-8abd-53fc52b66a75-1756833952206.png",
+    "createdAt": "2025-09-02T17:25:52.222Z",
+    "updatedAt": "2025-09-02T17:25:52.222Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b728cb13f3031eb4a4aed2",
+    "name": "Sports",
+    "name_ar": "الرياضة",
+    "image": "categories-29020461-a683-47a6-8210-999a7dbe3b88-1756833995174.png",
+    "createdAt": "2025-09-02T17:26:35.195Z",
+    "updatedAt": "2025-09-02T17:26:35.195Z",
+    "__v": 0
+  },
+  {
+    "_id": "68b728fb13f3031eb4a4aed4",
+    "name": "Makeup",
+    "name_ar": "ماكياج",
+    "image": "categories-5608fd53-9e9d-402e-adc8-72d896918f0b-1756834043641.png",
+    "createdAt": "2025-09-02T17:27:23.661Z",
+    "updatedAt": "2025-09-02T17:27:23.661Z",
+    "__v": 0
+  }
+]

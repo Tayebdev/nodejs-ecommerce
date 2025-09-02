@@ -23,8 +23,8 @@ const { verifyToken, allowedTo } = require("../middlewares/authMiddleware");
 router
   .route("/")
   .post(
-    verifyToken,
-    allowedTo("admin", "manager"),
+    // verifyToken,
+    // allowedTo("admin", "manager"),
     uploadImage().single("image"),
     resizeImage(96, 96, "categories"),
     createCategoryValidator,

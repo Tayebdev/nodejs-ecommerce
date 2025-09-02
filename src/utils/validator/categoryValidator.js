@@ -22,6 +22,14 @@ exports.createCategoryValidator = [
     .withMessage("Too short category name")
     .isLength({ max: 30 })
     .withMessage("Too long category name"),
+
+  check("name_ar")
+    .notEmpty()
+    .withMessage("category name is required")
+    .isLength({ min: 3 })
+    .withMessage("Too short category name")
+    .isLength({ max: 30 })
+    .withMessage("Too long category name"),
   runValidation,
 ];
 

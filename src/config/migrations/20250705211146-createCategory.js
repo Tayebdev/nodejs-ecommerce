@@ -9,11 +9,15 @@ module.exports = {
       validator: {
         $jsonSchema: {
           bsonType: "object",
-          required: ["name"],
+          required: ["name", "name_ar"],
           properties: {
             name: {
               bsonType: "string",
               description: "Category name is required",
+            },
+            name_ar: {
+              bsonType: "string",
+              description: "Category name_ar is required",
             },
             slug: { bsonType: "string" },
             image: {

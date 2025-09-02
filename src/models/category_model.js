@@ -1,20 +1,28 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const categorySchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true,'category is required'],
-    unique: [true,'category must be unique']
+const categorySchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "category is required"],
+      unique: [true, "category must be unique"],
+    },
+    name_ar: {
+      type: String,
+      required: [true, "category name_ar is required"],
+      unique: [true, "category must be unique"],
+    },
+    slug: {
+      type: String,
+      lowercase: true,
+    },
+    image: String,
   },
-  slug: {
-    type: String,
-    lowercase: true
-  },
-  image:String
-}, {
-  timestamps: true,
-  collection: 'Category' // forces collection name to be exactly 'Category'
-});
+  {
+    timestamps: true,
+    collection: "Category",
+  }
+);
 
-const CategoryModel = mongoose.model('Category', categorySchema);
+const CategoryModel = mongoose.model("Category", categorySchema);
 module.exports = CategoryModel;

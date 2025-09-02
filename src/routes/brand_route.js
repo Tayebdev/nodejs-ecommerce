@@ -13,15 +13,18 @@ const {
   updateBrand,
   deleteBrand,
 } = require("../controllers/brand_controller");
-
+const { uploadImage } = require("../middlewares/imageMiddleware");
+const { resizeImage } = require("../middlewares/resizeMiddleware");
 const { verifyToken, allowedTo } = require("../middlewares/authMiddleware");
 
 router
   .route("/")
   .get(getAllBrand)
   .post(
-    verifyToken,
-    allowedTo("admin", "manager"),
+    // verifyToken,
+    // allowedTo("admin", "manager"),
+    uploadImage().single("image"),
+    resizeImage(128, 128, "brands"),
     createBrandValidator,
     createBrand
   );

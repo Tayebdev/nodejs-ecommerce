@@ -20,6 +20,14 @@ exports.createSubCategoryValidator = [
     .isLength({ max: 30 })
     .withMessage("Too long Subcategory name"),
 
+  check("name_ar")
+    .notEmpty()
+    .withMessage("Subcategory name is required")
+    .isLength({ min: 3 })
+    .withMessage("Too short Subcategory name")
+    .isLength({ max: 30 })
+    .withMessage("Too long Subcategory name"),
+
   check("category")
     .notEmpty()
     .withMessage("Category ID is required")
@@ -31,6 +39,13 @@ exports.createSubCategoryValidator = [
 
 exports.updateSubCategoryValidator = [
   check("name")
+    .optional()
+    .isLength({ min: 3 })
+    .withMessage("Too short Subcategory name")
+    .isLength({ max: 30 })
+    .withMessage("Too long Subcategory name"),
+
+  check("name_ar")
     .optional()
     .isLength({ min: 3 })
     .withMessage("Too short Subcategory name")
