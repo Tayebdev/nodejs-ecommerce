@@ -57,12 +57,6 @@ exports.getUserValidator = [
 
 exports.updateUserValidator = [
   check("id").isMongoId().withMessage("Invalid user ID format"),
-  check("name")
-    .optional()
-    .custom((value, { req }) => {
-      req.body.slug = slugify(req.body.name);
-      return true;
-    }),
   check("email")
     .optional()
     .isEmail()
@@ -80,15 +74,11 @@ exports.updateUserValidator = [
     .withMessage("Invalid phone number")
     .custom(async (value, { req }) => {
       const user = await userModel.find({ phone: value });
-      if (user) {
+      if (user.length) {
         throw new Error("Phone already in use");
       }
       return true;
     }),
-  check("role")
-    .optional()
-    .isIn(["user", "admin"])
-    .withMessage("Role must be either user or admin"),
 
   check("profileImg")
     .optional()
@@ -99,7 +89,7 @@ exports.updateUserValidator = [
 
 exports.updateUserPasswordValidator = [
   check("id").isMongoId().withMessage("Invalid user ID format"),
-  
+
   check("currentPassword")
     .notEmpty()
     .withMessage("You must enter your current password"),

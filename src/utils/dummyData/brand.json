@@ -1,0 +1,490 @@
+[
+  {
+    "_id": "68beebc8397847ad3a869f83",
+    "name": "Acer",
+    "image": "brands-f93a9286-3031-4ced-b7ad-ea2b394ab6bd-1757342664684.png",
+    "createdAt": "2025-09-08T14:44:24.712Z",
+    "updatedAt": "2025-09-08T14:44:24.712Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beebdc397847ad3a869f85",
+    "name": "Adidas",
+    "image": "brands-075ff798-327d-4763-a088-aceb2310fb93-1757342684869.png",
+    "createdAt": "2025-09-08T14:44:44.882Z",
+    "updatedAt": "2025-09-08T14:44:44.882Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beebeb397847ad3a869f87",
+    "name": "Apple",
+    "image": "brands-2b1c11a6-1d54-4193-a119-24d113553531-1757342699711.png",
+    "createdAt": "2025-09-08T14:44:59.723Z",
+    "updatedAt": "2025-09-08T14:44:59.723Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beebf9397847ad3a869f89",
+    "name": "Ashley",
+    "image": "brands-fd4daef5-94cb-404d-8425-da51a0844fb3-1757342713745.png",
+    "createdAt": "2025-09-08T14:45:13.815Z",
+    "updatedAt": "2025-09-08T14:45:13.815Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beec07397847ad3a869f8b",
+    "name": "Asus",
+    "image": "brands-83ffc317-f9ce-451e-b365-fb2b1dfa2cef-1757342727303.png",
+    "createdAt": "2025-09-08T14:45:27.318Z",
+    "updatedAt": "2025-09-08T14:45:27.318Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beec15397847ad3a869f8d",
+    "name": "Barbie",
+    "image": "brands-529ebe51-69fc-426a-9cae-c60473b6c0bf-1757342741403.png",
+    "createdAt": "2025-09-08T14:45:41.428Z",
+    "updatedAt": "2025-09-08T14:45:41.428Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beec31397847ad3a869f91",
+    "name": "Bosch",
+    "image": "brands-c6132d10-f8dc-4669-beaf-bdcbcc1c7450-1757342769940.png",
+    "createdAt": "2025-09-08T14:46:09.966Z",
+    "updatedAt": "2025-09-08T14:46:09.966Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beec42397847ad3a869f93",
+    "name": "Bridgestone",
+    "image": "brands-2bf1b47f-a72b-4156-b18a-93b016ae0b4a-1757342786763.png",
+    "createdAt": "2025-09-08T14:46:26.787Z",
+    "updatedAt": "2025-09-08T14:46:26.787Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beec50397847ad3a869f95",
+    "name": "Canon",
+    "image": "brands-0f93ef0b-ec8c-486e-affd-6696049758ef-1757342800076.png",
+    "createdAt": "2025-09-08T14:46:40.089Z",
+    "updatedAt": "2025-09-08T14:46:40.089Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beec62397847ad3a869f97",
+    "name": "Castrol",
+    "image": "brands-954d275a-62d6-4469-bf5d-0f049556c116-1757342818024.png",
+    "createdAt": "2025-09-08T14:46:58.080Z",
+    "updatedAt": "2025-09-08T14:46:58.080Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beec75397847ad3a869f99",
+    "name": "Chanel",
+    "image": "brands-ca0c7e10-9aa2-46cf-8731-ae9bd3b27107-1757342837339.png",
+    "createdAt": "2025-09-08T14:47:17.361Z",
+    "updatedAt": "2025-09-08T14:47:17.361Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beec81397847ad3a869f9b",
+    "name": "Chicco",
+    "image": "brands-e9eec366-250c-42b1-a5fa-2bb39410a171-1757342849874.png",
+    "createdAt": "2025-09-08T14:47:29.900Z",
+    "updatedAt": "2025-09-08T14:47:29.900Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beec97397847ad3a869f9d",
+    "name": "Coca Cola",
+    "image": "brands-93a9e3ae-378f-4a6e-af39-53fe09294f6d-1757342871122.png",
+    "createdAt": "2025-09-08T14:47:51.148Z",
+    "updatedAt": "2025-09-08T14:47:51.148Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beecad397847ad3a869f9f",
+    "name": "Decathlon",
+    "image": "brands-37ece38d-7c73-49dd-887e-dd3af5e3e87c-1757342893312.png",
+    "createdAt": "2025-09-08T14:48:13.370Z",
+    "updatedAt": "2025-09-08T14:48:13.370Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beec23397847ad3a869f8f",
+    "name": "Decker",
+    "image": "brands-74d4696a-0f66-44d7-985c-af03bbd31d0e-1757342755506.png",
+    "createdAt": "2025-09-08T14:45:55.533Z",
+    "updatedAt": "2025-09-08T14:45:55.533Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beecbc397847ad3a869fa1",
+    "name": "Dell",
+    "image": "brands-57f66470-aac6-4379-b65a-f7050e748445-1757342908899.png",
+    "createdAt": "2025-09-08T14:48:28.914Z",
+    "updatedAt": "2025-09-08T14:48:28.914Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beecca397847ad3a869fa3",
+    "name": "Dior",
+    "image": "brands-68b4a140-9f60-4f4e-b1be-d49e839d84a3-1757342922275.png",
+    "createdAt": "2025-09-08T14:48:42.286Z",
+    "updatedAt": "2025-09-08T14:48:42.286Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beecd8397847ad3a869fa5",
+    "name": "Dove",
+    "image": "brands-66e2c4ff-8e5b-49b2-94da-1c53052e7b66-1757342936514.png",
+    "createdAt": "2025-09-08T14:48:56.535Z",
+    "updatedAt": "2025-09-08T14:48:56.535Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beeced397847ad3a869fa7",
+    "name": "Faber Castell",
+    "image": "brands-8868993d-258d-4c4c-81b7-7c937d754977-1757342957087.png",
+    "createdAt": "2025-09-08T14:49:17.110Z",
+    "updatedAt": "2025-09-08T14:49:17.110Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beed31397847ad3a869fad",
+    "name": "GNC",
+    "image": "brands-695a947b-e32b-4768-9036-56444b1dc0a0-1757343025846.png",
+    "createdAt": "2025-09-08T14:50:25.856Z",
+    "updatedAt": "2025-09-08T14:50:25.856Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beecfc397847ad3a869fa9",
+    "name": "Gerber",
+    "image": "brands-c6395b85-4a49-4a75-88c2-39d9fd5ac4cb-1757342972324.png",
+    "createdAt": "2025-09-08T14:49:32.374Z",
+    "updatedAt": "2025-09-08T14:49:32.374Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beed20397847ad3a869fab",
+    "name": "Gillette",
+    "image": "brands-1e92b842-d1e6-4204-9493-2cc68dedf4ed-1757343008894.png",
+    "createdAt": "2025-09-08T14:50:08.940Z",
+    "updatedAt": "2025-09-08T14:50:08.940Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beed48397847ad3a869faf",
+    "name": "Goodyear",
+    "image": "brands-9fb000fb-c1b1-4646-8ce5-3d91519bd7eb-1757343047992.png",
+    "createdAt": "2025-09-08T14:50:48.014Z",
+    "updatedAt": "2025-09-08T14:50:48.014Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beed56397847ad3a869fb1",
+    "name": "Gucci",
+    "image": "brands-5a065a15-570a-4303-af53-f3989017941f-1757343062675.png",
+    "createdAt": "2025-09-08T14:51:02.699Z",
+    "updatedAt": "2025-09-08T14:51:02.699Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beed66397847ad3a869fb3",
+    "name": "Hasbro",
+    "image": "brands-876d45de-86ab-4ec4-af78-49f4974a73a3-1757343078319.png",
+    "createdAt": "2025-09-08T14:51:18.330Z",
+    "updatedAt": "2025-09-08T14:51:18.330Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beed88397847ad3a869fb5",
+    "name": "Hpppp",
+    "image": "brands-9dc6ba4b-8749-4692-9a2b-1f426b92f90c-1757343112659.png",
+    "createdAt": "2025-09-08T14:51:52.673Z",
+    "updatedAt": "2025-09-08T14:51:52.673Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beed9b397847ad3a869fb7",
+    "name": "Huawei",
+    "image": "brands-1b6c0ecb-d3a0-40eb-b898-3b45f353b325-1757343131334.png",
+    "createdAt": "2025-09-08T14:52:11.347Z",
+    "updatedAt": "2025-09-08T14:52:11.347Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beee27397847ad3a869fb9",
+    "name": "Huggies",
+    "image": "brands-50fc5668-dea6-4a46-b3ec-e62fc50466e0-1757343271418.png",
+    "createdAt": "2025-09-08T14:54:31.466Z",
+    "updatedAt": "2025-09-08T14:54:31.466Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beee82397847ad3a869fc3",
+    "name": "LGggggg",
+    "image": "brands-8f42d96d-61cc-49ee-aba5-583b677e4fe7-1757343362739.png",
+    "createdAt": "2025-09-08T14:56:02.752Z",
+    "updatedAt": "2025-09-08T14:56:02.752Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beee65397847ad3a869fbf",
+    "name": "Lego",
+    "image": "brands-799fab23-a3b3-4a80-819f-c4b6d4686c7e-1757343333416.png",
+    "createdAt": "2025-09-08T14:55:33.435Z",
+    "updatedAt": "2025-09-08T14:55:33.435Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beee75397847ad3a869fc1",
+    "name": "Lenovo",
+    "image": "brands-4bf013fd-e8a0-4383-8f6a-ec93002de28c-1757343349379.png",
+    "createdAt": "2025-09-08T14:55:49.391Z",
+    "updatedAt": "2025-09-08T14:55:49.391Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beee99397847ad3a869fc5",
+    "name": "Logitech",
+    "image": "brands-e3f62cfc-cbd3-45f8-9264-505fb78150ed-1757343385728.png",
+    "createdAt": "2025-09-08T14:56:25.754Z",
+    "updatedAt": "2025-09-08T14:56:25.754Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beee56397847ad3a869fbd",
+    "name": "Loréal",
+    "image": "brands-d8512eb2-e883-47d2-bafb-ecc173048c51-1757343318938.png",
+    "createdAt": "2025-09-08T14:55:18.950Z",
+    "updatedAt": "2025-09-08T14:55:18.950Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beeeb3397847ad3a869fc7",
+    "name": "Louis Vuitton",
+    "image": "brands-5c1fe6fa-e026-4b01-af03-e5eb17b29f57-1757343411384.png",
+    "createdAt": "2025-09-08T14:56:51.426Z",
+    "updatedAt": "2025-09-08T14:56:51.426Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beee3f397847ad3a869fbb",
+    "name": "Makita",
+    "image": "brands-edbbf121-7704-46d4-a49d-6a9c00a85355-1757343295098.png",
+    "createdAt": "2025-09-08T14:54:55.169Z",
+    "updatedAt": "2025-09-08T14:54:55.169Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beeec9397847ad3a869fc9",
+    "name": "Maybelline",
+    "image": "brands-fe3f41c4-9754-44e0-9c71-cce6dc9acb1e-1757343433453.png",
+    "createdAt": "2025-09-08T14:57:13.475Z",
+    "updatedAt": "2025-09-08T14:57:13.475Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beeedc397847ad3a869fcb",
+    "name": "Michelin",
+    "image": "brands-f85da8b8-31c3-4dd9-add7-dee79c4867ba-1757343452137.png",
+    "createdAt": "2025-09-08T14:57:32.147Z",
+    "updatedAt": "2025-09-08T14:57:32.147Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beeef6397847ad3a869fcf",
+    "name": "Nestlé",
+    "image": "brands-3723e5ad-289a-4b8e-bc72-0f395495e140-1757343478586.png",
+    "createdAt": "2025-09-08T14:57:58.608Z",
+    "updatedAt": "2025-09-08T14:57:58.608Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beef09397847ad3a869fd1",
+    "name": "Nivea",
+    "image": "brands-a63f9cd4-bcb4-417d-b782-c8c6f2d8104e-1757343497948.png",
+    "createdAt": "2025-09-08T14:58:17.963Z",
+    "updatedAt": "2025-09-08T14:58:17.963Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beef17397847ad3a869fd3",
+    "name": "Nokia",
+    "image": "brands-6e7f891e-74b7-433c-a196-e141acfe3018-1757343511015.png",
+    "createdAt": "2025-09-08T14:58:31.024Z",
+    "updatedAt": "2025-09-08T14:58:31.024Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beef57397847ad3a869fd9",
+    "name": "Nutrition",
+    "image": "brands-5bc2b931-0eb7-4f4a-9c59-06ac236e0a7d-1757343575341.png",
+    "createdAt": "2025-09-08T14:59:35.349Z",
+    "updatedAt": "2025-09-08T14:59:35.349Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beef31397847ad3a869fd5",
+    "name": "One Plus",
+    "image": "brands-33498454-87e1-4cdd-b417-4d91da972bcc-1757343537320.png",
+    "createdAt": "2025-09-08T14:58:57.363Z",
+    "updatedAt": "2025-09-08T14:58:57.363Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beef3e397847ad3a869fd7",
+    "name": "Oppo",
+    "image": "brands-3e4a3289-e284-4b60-b95b-3876d7cd2904-1757343550305.png",
+    "createdAt": "2025-09-08T14:59:10.319Z",
+    "updatedAt": "2025-09-08T14:59:10.319Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beef6b397847ad3a869fdb",
+    "name": "Oxford",
+    "image": "brands-660b7163-485d-4d39-8aca-ab0969514ee4-1757343595108.png",
+    "createdAt": "2025-09-08T14:59:55.129Z",
+    "updatedAt": "2025-09-08T14:59:55.129Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beef79397847ad3a869fdd",
+    "name": "Pampers",
+    "image": "brands-e1ed5450-0255-4047-9698-1d45be8099f9-1757343609747.png",
+    "createdAt": "2025-09-08T15:00:09.804Z",
+    "updatedAt": "2025-09-08T15:00:09.804Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beef85397847ad3a869fdf",
+    "name": "Pepsi",
+    "image": "brands-d9b79a52-3264-4ee2-9728-17464ad78189-1757343621047.png",
+    "createdAt": "2025-09-08T15:00:21.095Z",
+    "updatedAt": "2025-09-08T15:00:21.095Z",
+    "__v": 0
+  },
+  {
+    "_id": "68bef003397847ad3a869feb",
+    "name": "PlayStation",
+    "image": "brands-3d61f623-92a0-483c-a15b-7959c7e1ab4f-1757343747147.png",
+    "createdAt": "2025-09-08T15:02:27.162Z",
+    "updatedAt": "2025-09-08T15:02:27.162Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beefaf397847ad3a869fe3",
+    "name": "Pottery Barn",
+    "image": "brands-43636423-3819-490a-acd3-9e628b1865a2-1757343663529.png",
+    "createdAt": "2025-09-08T15:01:03.539Z",
+    "updatedAt": "2025-09-08T15:01:03.539Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beef96397847ad3a869fe1",
+    "name": "Puma",
+    "image": "brands-03706a7c-4bf5-4750-a9fa-cb0f8a5c1b69-1757343638273.png",
+    "createdAt": "2025-09-08T15:00:38.296Z",
+    "updatedAt": "2025-09-08T15:00:38.296Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beefc2397847ad3a869fe5",
+    "name": "Razer",
+    "image": "brands-055db081-5c43-4ed9-985e-3344f649544c-1757343682639.png",
+    "createdAt": "2025-09-08T15:01:22.659Z",
+    "updatedAt": "2025-09-08T15:01:22.659Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beeff2397847ad3a869fe9",
+    "name": "Shell",
+    "image": "brands-0e828481-cec0-4d42-ac51-f74fed24abb6-1757343730282.png",
+    "createdAt": "2025-09-08T15:02:10.308Z",
+    "updatedAt": "2025-09-08T15:02:10.308Z",
+    "__v": 0
+  },
+  {
+    "_id": "68bef022397847ad3a869fed",
+    "name": "Sony",
+    "image": "brands-33254ec8-0c9f-414b-a02a-c739efbdc38a-1757343778597.png",
+    "createdAt": "2025-09-08T15:02:58.610Z",
+    "updatedAt": "2025-09-08T15:02:58.610Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beefcf397847ad3a869fe7",
+    "name": "Sumsung",
+    "image": "brands-2a991a1c-d5ae-47db-9668-d2b8d39cd382-1757343695148.png",
+    "createdAt": "2025-09-08T15:01:35.161Z",
+    "updatedAt": "2025-09-08T15:01:35.161Z",
+    "__v": 0
+  },
+  {
+    "_id": "68bef036397847ad3a869fef",
+    "name": "Technogym",
+    "image": "brands-f5710128-f38e-4b96-8869-c9258f65d959-1757343798439.png",
+    "createdAt": "2025-09-08T15:03:18.448Z",
+    "updatedAt": "2025-09-08T15:03:18.448Z",
+    "__v": 0
+  },
+  {
+    "_id": "68bef045397847ad3a869ff1",
+    "name": "Trixie",
+    "image": "brands-0a855ee0-c7ef-4ac6-a667-481f555e6d17-1757343813923.png",
+    "createdAt": "2025-09-08T15:03:33.953Z",
+    "updatedAt": "2025-09-08T15:03:33.953Z",
+    "__v": 0
+  },
+  {
+    "_id": "68bef054397847ad3a869ff3",
+    "name": "Unilever",
+    "image": "brands-a6cc7273-f6bf-4336-b330-4692e94a72c7-1757343828234.png",
+    "createdAt": "2025-09-08T15:03:48.257Z",
+    "updatedAt": "2025-09-08T15:03:48.257Z",
+    "__v": 0
+  },
+  {
+    "_id": "68bef05f397847ad3a869ff5",
+    "name": "Vivo",
+    "image": "brands-4aa5fdd2-63a1-49fd-94a3-21aaa61f7ca3-1757343839092.png",
+    "createdAt": "2025-09-08T15:03:59.133Z",
+    "updatedAt": "2025-09-08T15:03:59.133Z",
+    "__v": 0
+  },
+  {
+    "_id": "68bef06f397847ad3a869ff7",
+    "name": "Wayfair",
+    "image": "brands-5bc739c7-1f2f-4afb-adcb-c5aa0bf5c2dd-1757343855007.png",
+    "createdAt": "2025-09-08T15:04:15.029Z",
+    "updatedAt": "2025-09-08T15:04:15.029Z",
+    "__v": 0
+  },
+  {
+    "_id": "68beeeea397847ad3a869fcd",
+    "name": "Xbox",
+    "image": "brands-210f07dc-be8c-49f9-adb3-8d49830ec21f-1757343466532.png",
+    "createdAt": "2025-09-08T14:57:46.556Z",
+    "updatedAt": "2025-09-08T14:57:46.556Z",
+    "__v": 0
+  },
+  {
+    "_id": "68bef07f397847ad3a869ff9",
+    "name": "Xiaomi",
+    "image": "brands-42863b6b-0b70-4b18-ba58-9f58a576d8fa-1757343871391.png",
+    "createdAt": "2025-09-08T15:04:31.401Z",
+    "updatedAt": "2025-09-08T15:04:31.401Z",
+    "__v": 0
+  },
+  {
+    "_id": "68bef091397847ad3a869ffb",
+    "name": "Zara",
+    "image": "brands-e5224805-c945-4fdd-8d8d-22a46b02110a-1757343889839.png",
+    "createdAt": "2025-09-08T15:04:49.855Z",
+    "updatedAt": "2025-09-08T15:04:49.855Z",
+    "__v": 0
+  }
+]

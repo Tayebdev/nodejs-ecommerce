@@ -16,7 +16,6 @@ const updateUser = asyncHandler(async (req, res, next) => {
     {
       lastName: req.body.lastName,
       firstName:req.body.firstName,
-      slug: req.body.slug,
       email: req.body.email,
       phone: req.body.phone,
       profileImg: req.body.profileImg,

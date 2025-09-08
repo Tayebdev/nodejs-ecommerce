@@ -19,17 +19,9 @@ module.exports = {
               bsonType: "string",
               description: "SubCategory name_ar is required",
             },
-            slug: {
-              bsonType: "string",
-              description: "Slug must be a string",
-            },
             category: {
               bsonType: "objectId",
               description: "Must be a reference to Category",
-            },
-            image: {
-              bsonType: "string",
-              description: "SubCategory image URL (optional)",
             },
           },
         },

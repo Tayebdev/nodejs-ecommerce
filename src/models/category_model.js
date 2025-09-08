@@ -12,10 +12,6 @@ const categorySchema = new mongoose.Schema(
       required: [true, "category name_ar is required"],
       unique: [true, "category must be unique"],
     },
-    slug: {
-      type: String,
-      lowercase: true,
-    },
     image: String,
   },
   {

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 require('colors');
-const Product = require('../../models/product_model');
+const subCategory = require('../../models/subCategory_model');
 const dbConnection = require('../../config/db');
 const dotenv = require('dotenv');
 
@@ -12,14 +12,14 @@ dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
 dbConnection();
 
 // ✅ Read data file with correct absolute path
-const products = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'products.json'), 'utf-8')
+const data = JSON.parse(
+  fs.readFileSync(path.join(__dirname, 'subCategory.json'), 'utf-8')
 );
 
 // ✅ Insert data into DB
 const insertData = async () => {
   try {
-    await Product.create(products);
+    await subCategory.create(data);
     console.log('Data Inserted'.green.inverse);
     process.exit();
   } catch (error) {
@@ -31,7 +31,7 @@ const insertData = async () => {
 // ✅ Delete data from DB
 const destroyData = async () => {
   try {
-    await Product.deleteMany();
+    await subCategory.deleteMany();
     console.log('Data Destroyed'.red.inverse);
     process.exit();
   } catch (error) {

@@ -21,9 +21,6 @@ const createOne = (model) => {
     if (req.file) {
       req.body.image = req.file.filename;
     }
-    if (req.body.title) {
-      req.body.slug = slugify(req.body.title);
-    }
     const doc = new model(req.body);
     const savedDoc = await doc.save();
     res.status(201).json({
@@ -35,7 +32,7 @@ const createOne = (model) => {
 
 const getOne = (model) => {
   return asyncHandler(async (req, res, next) => {
-    const doc = await model.find().sort({ name: 1 });
+    const doc = await model.findById(req.params.id).sort({ name: 1 });
     if (!doc || doc.length === 0) {
       return next(new ErrorAPI(`Not ${model.modelName} found`, 404));
     }
@@ -48,7 +45,7 @@ const getOne = (model) => {
 
 const getAll = (model) => {
   return asyncHandler(async (req, res, next) => {
-    const doc = await model.find();
+    const doc = await model.find().sort({ name: 1 });;
     if (!doc || doc.length === 0) {
       return next(new ErrorAPI(`not found ${model.modelName}`, 404));
     }
@@ -62,9 +59,6 @@ const getAll = (model) => {
 
 const updateOne = (model) => {
   return asyncHandler(async (req, res, next) => {
-    if (req.body.title) {
-      req.body.slug = slugify(req.body.title);
-    }
     const doc = await model.findOneAndUpdate({ _id: req.params.id }, req.body, {
       new: true,
     });

@@ -1,0 +1,367 @@
+[
+  {
+    "name": "Food & Treats",
+    "name_ar": "طعام ووجبات خفيفة",
+    "category": "68b7261613f3031eb4a4aeb5"
+  },
+  {
+    "name": "Pet Toys",
+    "name_ar": "ألعاب الحيوانات",
+    "category": "68b7261613f3031eb4a4aeb5"
+  },
+  {
+    "name": "Beds & Furniture",
+    "name_ar": "أسرة وأثاث",
+    "category": "68b7261613f3031eb4a4aeb5"
+  },
+  {
+    "name": "Hand Tools",
+    "name_ar": "أدوات يدوية",
+    "category": "68b7264013f3031eb4a4aeb8"
+  },
+  {
+    "name": "Power Tools",
+    "name_ar": "أدوات كهربائية",
+    "category": "68b7264013f3031eb4a4aeb8"
+  },
+  {
+    "name": "Garden Tools",
+    "name_ar": "أدوات الحدائق",
+    "category": "68b7264013f3031eb4a4aeb8"
+  },
+  {
+    "name": "Smartphones & Accessories",
+    "name_ar": "الهواتف وإكسسواراتها",
+    "category": "68b7268013f3031eb4a4aebc"
+  },
+  {
+    "name": "Laptops & Computers",
+    "name_ar": "الحواسيب المحمولة والمكتبية",
+    "category": "68b7268013f3031eb4a4aebc"
+  },
+  {
+    "name": "Audio & Headphones",
+    "name_ar": "الصوتيات والسماعات",
+    "category": "68b7268013f3031eb4a4aebc"
+  },
+  {
+    "name": "Men’s Clothing",
+    "name_ar": "ملابس رجالية",
+    "category": "68b7269a13f3031eb4a4aebe"
+  },
+  {
+    "name": "Women’s Clothing",
+    "name_ar": "ملابس نسائية",
+    "category": "68b7269a13f3031eb4a4aebe"
+  },
+  {
+    "name": "Kids’ Clothing",
+    "name_ar": "ملابس الأطفال",
+    "category": "68b7269a13f3031eb4a4aebe"
+  },
+  {
+    "name": "Living Room",
+    "name_ar": "غرفة المعيشة",
+    "category": "68b7270913f3031eb4a4aec0"
+  },
+  {
+    "name": "Bedroom",
+    "name_ar": "غرفة النوم",
+    "category": "68b7270913f3031eb4a4aec0"
+  },
+  {
+    "name": "Office Furniture",
+    "name_ar": "أثاث المكتب",
+    "category": "68b7270913f3031eb4a4aec0"
+  },
+  {
+    "name": "Diapers",
+    "name_ar": "حفاضات",
+    "category": "68b7279013f3031eb4a4aec2"
+  },
+  {
+    "name": "Baby Food",
+    "name_ar": "طعام الأطفال",
+    "category": "68b7279013f3031eb4a4aec2"
+  },
+  {
+    "name": "Strollers & Car Seats",
+    "name_ar": "عربات ومقاعد الأطفال",
+    "category": "68b7279013f3031eb4a4aec2"
+  },
+  {
+    "name": "Consoles",
+    "name_ar": "أجهزة الألعاب",
+    "category": "68b727b913f3031eb4a4aec4"
+  },
+  {
+    "name": "Games",
+    "name_ar": "الألعاب",
+    "category": "68b727b913f3031eb4a4aec4"
+  },
+  {
+    "name": "Gaming Accessories",
+    "name_ar": "إكسسوارات الألعاب",
+    "category": "68b727b913f3031eb4a4aec4"
+  },
+  {
+    "name": "Car Accessories",
+    "name_ar": "إكسسوارات السيارات",
+    "category": "68b7281413f3031eb4a4aec8"
+  },
+  {
+    "name": "Car Care",
+    "name_ar": "العناية بالسيارات",
+    "category": "68b7281413f3031eb4a4aec8"
+  },
+  {
+    "name": "Tires & Wheels",
+    "name_ar": "الإطارات والعجلات",
+    "category": "68b7281413f3031eb4a4aec8"
+  },
+  {
+    "name": "Fitness Equipment",
+    "name_ar": "معدات اللياقة",
+    "category": "68b7282c13f3031eb4a4aeca"
+  },
+  {
+    "name": "Supplements",
+    "name_ar": "المكملات الغذائية",
+    "category": "68b7282c13f3031eb4a4aeca"
+  },
+  {
+    "name": "Personal Care",
+    "name_ar": "العناية الشخصية",
+    "category": "68b7282c13f3031eb4a4aeca"
+  },
+  {
+    "name": "Educational Toys",
+    "name_ar": "ألعاب تعليمية",
+    "category": "68b7285913f3031eb4a4aecc"
+  },
+  {
+    "name": "Action Figures",
+    "name_ar": "دمى وشخصيات",
+    "category": "68b7285913f3031eb4a4aecc"
+  },
+  {
+    "name": "Building Blocks",
+    "name_ar": "مكعبات البناء",
+    "category": "68b7285913f3031eb4a4aecc"
+  },
+  {
+    "name": "Fresh Produce",
+    "name_ar": "الخضار والفواكه",
+    "category": "68b7287613f3031eb4a4aece"
+  },
+  {
+    "name": "Beverages",
+    "name_ar": "المشروبات",
+    "category": "68b7287613f3031eb4a4aece"
+  },
+  {
+    "name": "Snacks",
+    "name_ar": "الوجبات الخفيفة",
+    "category": "68b7287613f3031eb4a4aece"
+  },
+  {
+    "name": "Notebooks & Papers",
+    "name_ar": "الدفاتر والأوراق",
+    "category": "68b728a013f3031eb4a4aed0"
+  },
+  {
+    "name": "Pens & Pencils",
+    "name_ar": "الأقلام والرصاص",
+    "category": "68b728a013f3031eb4a4aed0"
+  },
+  {
+    "name": "Office Supplies",
+    "name_ar": "مستلزمات المكتب",
+    "category": "68b728a013f3031eb4a4aed0"
+  },
+  {
+    "name": "Gym Equipment",
+    "name_ar": "معدات الجيم",
+    "category": "68b728cb13f3031eb4a4aed2"
+  },
+  {
+    "name": "Outdoor Sports",
+    "name_ar": "الرياضات الخارجية",
+    "category": "68b728cb13f3031eb4a4aed2"
+  },
+  {
+    "name": "Sportswear",
+    "name_ar": "الملابس الرياضية",
+    "category": "68b728cb13f3031eb4a4aed2"
+  },
+  {
+    "name": "Face Makeup",
+    "name_ar": "مستحضرات الوجه",
+    "category": "68b728fb13f3031eb4a4aed4"
+  },
+  {
+    "name": "Eye Makeup",
+    "name_ar": "مستحضرات العيون",
+    "category": "68b728fb13f3031eb4a4aed4"
+  },
+  {
+    "name": "Lip Makeup",
+    "name_ar": "مستحضرات الشفاه",
+    "category": "68b728fb13f3031eb4a4aed4"
+  },
+  {
+    "name": "Skincare",
+    "name_ar": "العناية بالبشرة",
+    "category": "68b728fb13f3031eb4a4aed4"
+  },
+  {
+    "name": "Perfumes",
+    "name_ar": "العطور",
+    "category": "68b728fb13f3031eb4a4aed4"
+  },
+  {
+    "name": "Leashes & Collars",
+    "name_ar": "الأطواق والمقاود",
+    "category": "68b7261613f3031eb4a4aeb5"
+  },
+  {
+    "name": "Aquarium Supplies",
+    "name_ar": "مستلزمات الأحواض",
+    "category": "68b7261613f3031eb4a4aeb5"
+  },
+  {
+    "name": "Camping Tools",
+    "name_ar": "أدوات التخييم",
+    "category": "68b7264013f3031eb4a4aeb8"
+  },
+  {
+    "name": "Safety Gear",
+    "name_ar": "معدات السلامة",
+    "category": "68b7264013f3031eb4a4aeb8"
+  },
+  {
+    "name": "Wearables & Smartwatches",
+    "name_ar": "الأجهزة القابلة للارتداء",
+    "category": "68b7268013f3031eb4a4aebc"
+  },
+  {
+    "name": "Cameras & Photography",
+    "name_ar": "الكاميرات والتصوير",
+    "category": "68b7268013f3031eb4a4aebc"
+  },
+  {
+    "name": "Shoes",
+    "name_ar": "الأحذية",
+    "category": "68b7269a13f3031eb4a4aebe"
+  },
+  {
+    "name": "Bags & Accessories",
+    "name_ar": "الحقائب والإكسسوارات",
+    "category": "68b7269a13f3031eb4a4aebe"
+  },
+  {
+    "name": "Dining Room",
+    "name_ar": "غرفة الطعام",
+    "category": "68b7270913f3031eb4a4aec0"
+  },
+  {
+    "name": "Kitchen Furniture",
+    "name_ar": "أثاث المطبخ",
+    "category": "68b7270913f3031eb4a4aec0"
+  },
+  {
+    "name": "Baby Clothing",
+    "name_ar": "ملابس الأطفال الرضع",
+    "category": "68b7279013f3031eb4a4aec2"
+  },
+  {
+    "name": "Baby Bath & Care",
+    "name_ar": "استحمام وعناية الأطفال",
+    "category": "68b7279013f3031eb4a4aec2"
+  },
+  {
+    "name": "VR Headsets",
+    "name_ar": "نظارات الواقع الافتراضي",
+    "category": "68b727b913f3031eb4a4aec4"
+  },
+  {
+    "name": "Gift Cards",
+    "name_ar": "بطاقات الهدايا",
+    "category": "68b727b913f3031eb4a4aec4"
+  },
+  {
+    "name": "Car Electronics",
+    "name_ar": "الإلكترونيات للسيارات",
+    "category": "68b7281413f3031eb4a4aec8"
+  },
+  {
+    "name": "Motor Oils & Fluids",
+    "name_ar": "زيوت وسوائل السيارات",
+    "category": "68b7281413f3031eb4a4aec8"
+  },
+  {
+    "name": "Yoga & Meditation",
+    "name_ar": "اليوغا والتأمل",
+    "category": "68b7282c13f3031eb4a4aeca"
+  },
+  {
+    "name": "Massage & Recovery",
+    "name_ar": "التدليك والاستشفاء",
+    "category": "68b7282c13f3031eb4a4aeca"
+  },
+  {
+    "name": "Board Games",
+    "name_ar": "ألعاب الطاولة",
+    "category": "68b7285913f3031eb4a4aecc"
+  },
+  {
+    "name": "Dolls & Plush",
+    "name_ar": "الدمى والعرائس",
+    "category": "68b7285913f3031eb4a4aecc"
+  },
+  {
+    "name": "Frozen Foods",
+    "name_ar": "الأطعمة المجمدة",
+    "category": "68b7287613f3031eb4a4aece"
+  },
+  {
+    "name": "Cooking Essentials",
+    "name_ar": "مستلزمات الطبخ",
+    "category": "68b7287613f3031eb4a4aece"
+  },
+  {
+    "name": "Art Supplies",
+    "name_ar": "مستلزمات الرسم",
+    "category": "68b728a013f3031eb4a4aed0"
+  },
+  {
+    "name": "School Backpacks",
+    "name_ar": "حقائب مدرسية",
+    "category": "68b728a013f3031eb4a4aed0"
+  },
+  {
+    "name": "Cycling",
+    "name_ar": "ركوب الدراجات",
+    "category": "68b728cb13f3031eb4a4aed2"
+  },
+  {
+    "name": "Team Sports",
+    "name_ar": "الرياضات الجماعية",
+    "category": "68b728cb13f3031eb4a4aed2"
+  },
+  {
+    "name": "Nail Care",
+    "name_ar": "العناية بالأظافر",
+    "category": "68b728fb13f3031eb4a4aed4"
+  },
+  {
+    "name": "Hair Care",
+    "name_ar": "العناية بالشعر",
+    "category": "68b728fb13f3031eb4a4aed4"
+  },
+  {
+    "name": "Men’s Grooming",
+    "name_ar": "العناية الرجالية",
+    "category": "68b728fb13f3031eb4a4aed4"
+  }
+]

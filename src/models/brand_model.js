@@ -10,10 +10,6 @@ const BrandSchema = new mongoose.Schema(
     image: {
       type: String
     },
-    slug: {
-      type: String,
-      lowercase: true
-    }
   },
   {
     collection: "Brand",

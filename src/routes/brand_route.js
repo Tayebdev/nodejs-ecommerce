@@ -24,7 +24,7 @@ router
     // verifyToken,
     // allowedTo("admin", "manager"),
     uploadImage().single("image"),
-    resizeImage(128, 128, "brands"),
+    resizeImage(225, 225, "brands"),
     createBrandValidator,
     createBrand
   );
