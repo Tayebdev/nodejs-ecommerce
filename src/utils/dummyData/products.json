@@ -1,162 +1,196 @@
 [
   {
-    "title": "Fjallraven - Foldsack No. 1",
-    "slug": "fjallraven-foldsack-no-1",
-    "quantity": 10,
-    "sold": 25,
-    "price": 109.95,
-    "priceAfterDiscount": 100,
-    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday.",
-    "category": "61b2a9d869d54640ca3d7293",
-    "subCategory": "64db20000000000000000001",
-    "brand": "64db30000000000000000001",
-    "imageCover": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    "colors": [],
-    "ratingAverage": 4.3,
-    "ratingQuantity": 20
+    "_id": "68c08b25763ca837451f6ada",
+    "title": "Samsung Galaxy S24",
+    "description": "High-performance Android smartphone with AMOLED display and multi-lens camera.",
+    "quantity": 40,
+    "sold": 5,
+    "price": 1800,
+    "priceAfterDiscount": 1710,
+    "images": [
+      {
+        "color": "Black",
+        "image": "products-4a0cd9a5-adc4-4f77-9d68-585904817446-1757448997055.png",
+        "_id": "68c08b25763ca837451f6adb"
+      },
+      {
+        "color": "Blue",
+        "image": "products-e44c96b8-6862-4605-8051-f4eb74bdba89-1757448997057.png",
+        "_id": "68c08b25763ca837451f6adc"
+      },
+      {
+        "color": "Red",
+        "image": "products-0874357b-bc77-46b6-8a04-b56596f22cab-1757448997057.png",
+        "_id": "68c08b25763ca837451f6add"
+      },
+      {
+        "color": "White",
+        "image": "products-17b8f5a9-3a80-437d-b43c-0e4a9a724f1a-1757448997057.png",
+        "_id": "68c08b25763ca837451f6ade"
+      }
+    ],
+    "sizes": ["512 GB", "256 GB", "128 GB"],
+    "category": {
+      "name": "Electronics"
+    },
+    "subCategory": {
+      "name": "Smartphones & Accessories"
+    },
+    "brand": {
+      "name": "Apple"
+    },
+    "ratingAverage": 1,
+    "quantityResidents": 0,
+    "createdAt": "2025-09-09T20:16:37.316Z",
+    "updatedAt": "2025-09-09T20:16:37.316Z",
+    "__v": 0
   },
   {
-    "title": "Casual Slim Fit T-Shirts",
-    "slug": "casual-slim-fit-tshirts",
-    "quantity": 20,
-    "sold": 30,
-    "price": 22.3,
-    "priceAfterDiscount": 20,
-    "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, lightweight & soft fabric for breathable comfort.",
-    "category": "61b2a9d869d54640ca3d7293",
-    "subCategory": "64db20000000000000000002",
-    "brand": "64db30000000000000000001",
-    "imageCover": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-    "colors": [],
-    "ratingAverage": 4.4,
-    "ratingQuantity": 23
+    "_id": "68c08bc1763ca837451f6ae3",
+    "title": "Apple iPhone 15 Pro",
+    "description": "Latest Apple smartphone with advanced camera and A17 chip for superior performance.",
+    "quantity": 30,
+    "sold": 10,
+    "price": 1700,
+    "priceAfterDiscount": 1530,
+    "images": [
+      {
+        "color": "Black",
+        "image": "products-f38649ed-77cc-4e77-ade7-67906324b18b-1757449153282.png",
+        "_id": "68c08bc1763ca837451f6ae4"
+      },
+      {
+        "color": "Blue",
+        "image": "products-32ffe099-e940-4cf7-b68b-f2e7161e941e-1757449153283.png",
+        "_id": "68c08bc1763ca837451f6ae5"
+      },
+      {
+        "color": "Green",
+        "image": "products-3e1edb52-aae7-46ac-8db3-8509968993f8-1757449153283.png",
+        "_id": "68c08bc1763ca837451f6ae6"
+      },
+      {
+        "color": "Yellow",
+        "image": "products-b229fb29-67d5-46b0-bb8f-1d1e567f5f9a-1757449153283.png",
+        "_id": "68c08bc1763ca837451f6ae7"
+      }
+    ],
+    "sizes": ["64 GB", "256 GB", "128 GB"],
+    "category": {
+      "name": "Electronics"
+    },
+    "subCategory": {
+      "name": "Smartphones & Accessories"
+    },
+    "brand": {
+      "name": "Apple"
+    },
+    "ratingAverage": 1,
+    "quantityResidents": 0,
+    "createdAt": "2025-09-09T20:19:13.501Z",
+    "updatedAt": "2025-09-09T20:19:13.501Z",
+    "__v": 0
   },
   {
-    "title": "Mens Cotton Jacket",
-    "slug": "mens-cotton-jacket",
-    "quantity": 20,
-    "sold": 75,
-    "price": 55.99,
-    "priceAfterDiscount": 0,
-    "description": "Great outerwear jacket for Spring/Autumn/Winter, suitable for working, hiking, mountain climbing, and other outdoor activities.",
-    "category": "61b7a02868424f7846ce1d6f",
-    "subCategory": "64db20000000000000000003",
-    "brand": "64db30000000000000000002",
-    "imageCover": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-    "colors": [],
-    "ratingAverage": 4.0,
-    "ratingQuantity": 70
+    "_id": "68c08d29763ca837451f6aec",
+    "title": "Google Pixel 8 Pro",
+    "description": "Smartphone with Google Tensor chip, advanced AI camera, and smooth Android experience.",
+    "quantity": 34,
+    "sold": 7,
+    "price": 1500,
+    "priceAfterDiscount": 1395,
+    "images": [
+      {
+        "color": "Black",
+        "image": "products-d614bf8e-0367-4c16-abca-c3314aa7e5b6-1757449513066.png",
+        "_id": "68c08d29763ca837451f6aed"
+      },
+      {
+        "color": "Blue",
+        "image": "products-4a7034a1-fa3a-4318-9149-f13fb4ab8947-1757449513067.png",
+        "_id": "68c08d29763ca837451f6aee"
+      },
+      {
+        "color": "Green",
+        "image": "products-9e4a3737-c701-4f52-b48a-43278024f228-1757449513067.png",
+        "_id": "68c08d29763ca837451f6aef"
+      },
+      {
+        "color": "Yellow",
+        "image": "products-16be3459-1eab-4af2-a0db-424d0c8dac12-1757449513067.png",
+        "_id": "68c08d29763ca837451f6af0"
+      },
+      {
+        "color": "White",
+        "image": "products-cb53e340-28f8-4a46-a3e2-923910127e8c-1757449513067.png",
+        "_id": "68c08d29763ca837451f6af1"
+      }
+    ],
+    "sizes": ["512 GB", "256 GB", "128 GB"],
+    "category": {
+      "name": "Electronics"
+    },
+    "subCategory": {
+      "name": "Smartphones & Accessories"
+    },
+    "brand": {
+      "name": "Apple"
+    },
+    "ratingAverage": 1,
+    "quantityResidents": 0,
+    "createdAt": "2025-09-09T20:25:13.344Z",
+    "updatedAt": "2025-09-09T20:25:13.344Z",
+    "__v": 0
   },
   {
-    "title": "Mens Casual Fit",
-    "slug": "mens-casual-fit",
-    "quantity": 100,
-    "sold": 101,
-    "price": 15.99,
-    "priceAfterDiscount": 0,
-    "description": "The color may vary slightly on screen vs. reality. Please review the size chart below carefully before purchasing.",
-    "category": "61b2a9d869d54640ca3d7293",
-    "subCategory": "64db20000000000000000004",
-    "brand": "64db30000000000000000003",
-    "imageCover": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-    "colors": [],
-    "ratingAverage": 4.9,
-    "ratingQuantity": 98
-  },
-  {
-    "title": "Legends Naga Bracelet",
-    "slug": "legends-naga-bracelet",
-    "quantity": 100,
-    "sold": 14,
-    "price": 695,
-    "priceAfterDiscount": 0,
-    "description": "Inspired by the mythical water dragon. Wear inward for love, outward for protection.",
-    "category": "61b2a9d869d54640ca3d7293",
-    "subCategory": "64db20000000000000000005",
-    "brand": "64db30000000000000000004",
-    "imageCover": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
-    "colors": [],
-    "ratingAverage": 4.4,
-    "ratingQuantity": 12
-  },
-  {
-    "title": "Gold Petite Micropave",
-    "slug": "gold-petite-micropave",
-    "quantity": 75,
-    "sold": 69,
-    "price": 168,
-    "priceAfterDiscount": 0,
-    "description": "Return or exchange any order within 30 days. Designed and sold by Hafeez Center.",
-    "category": "61b2a8dd4bad61f4cc4a98ea",
-    "subCategory": "64db20000000000000000006",
-    "brand": "64db30000000000000000005",
-    "imageCover": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-    "colors": [],
-    "ratingAverage": 3.1,
-    "ratingQuantity": 66
-  },
-  {
-    "title": "Gold Plated Princess",
-    "slug": "gold-plated-princess",
-    "quantity": 33,
-    "sold": 99,
-    "price": 9.99,
-    "priceAfterDiscount": 0,
-    "description": "Wedding Engagement Promise Ring for Her. Great gift for special occasions.",
-    "category": "61b2a8dd4bad61f4cc4a98ea",
-    "subCategory": "64db20000000000000000007",
-    "brand": "64db30000000000000000005",
-    "imageCover": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-    "colors": [],
-    "ratingAverage": 2.8,
-    "ratingQuantity": 76
-  },
-  {
-    "title": "Owl Rose Gold Earrings",
-    "slug": "owl-rose-gold-earrings",
-    "quantity": 90,
-    "sold": 32,
-    "price": 10.99,
-    "priceAfterDiscount": 0,
-    "description": "Rose Gold Plated Tunnel Plug Earrings. Made of 316L Stainless Steel.",
-    "category": "61b2a8dd4bad61f4cc4a98ea",
-    "subCategory": "64db20000000000000000008",
-    "brand": "64db30000000000000000006",
-    "imageCover": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
-    "colors": [],
-    "ratingAverage": 4.3,
-    "ratingQuantity": 20
-  },
-  {
-    "title": "WD 2TB Portable HDD",
-    "slug": "wd-2tb-portable-hdd",
-    "quantity": 102,
-    "sold": 51,
-    "price": 64,
-    "priceAfterDiscount": 0,
-    "description": "USB 3.0/2.0 Compatible. Formatted for Windows 10, 8.1, and 7.",
-    "category": "61b2a8dd4bad61f4cc4a98ea",
-    "subCategory": "64db20000000000000000009",
-    "brand": "64db30000000000000000007",
-    "imageCover": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
-    "colors": [],
-    "ratingAverage": 4.8,
-    "ratingQuantity": 42
-  },
-  {
-    "title": "SanDisk 1TB SSD",
-    "slug": "sandisk-1tb-ssd",
-    "quantity": 104,
-    "sold": 9,
-    "price": 109,
-    "priceAfterDiscount": 0,
-    "description": "Boosts burst write performance. Ideal for PC workloads. Read/write up to 535MB/s.",
-    "category": "61b2a8dd4bad61f4cc4a98ea",
-    "subCategory": "64db20000000000000000010",
-    "brand": "64db30000000000000000008",
-    "imageCover": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
-    "colors": [],
-    "ratingAverage": 1.6,
-    "ratingQuantity": 5
+    "_id": "68c08f72c68ce5617396d79c",
+    "title": "OnePlus 12",
+    "description": "Flagship OnePlus phone with fast charging, Fluid AMOLED display, and Snapdragon processor.",
+    "quantity": 50,
+    "sold": 20,
+    "price": 1800,
+    "priceAfterDiscount": 1440,
+    "images": [
+      {
+        "color": "Black",
+        "image": "products-b870bda0-9b95-4a1d-9fed-410621e5c5b6-1757450097123.png",
+        "_id": "68c08f72c68ce5617396d79d"
+      },
+      {
+        "color": "Blue",
+        "image": "products-c12f2a3d-aad5-4bf4-aedd-a20602e2ca50-1757450097125.png",
+        "_id": "68c08f72c68ce5617396d79e"
+      },
+      {
+        "color": "Green",
+        "image": "products-b8dd07bc-196b-43cd-8d3f-ffa4adbe1520-1757450097125.png",
+        "_id": "68c08f72c68ce5617396d79f"
+      },
+      {
+        "color": "Yellow",
+        "image": "products-72e5be77-7086-448c-8a14-55f294104a7c-1757450097125.png",
+        "_id": "68c08f72c68ce5617396d7a0"
+      },
+      {
+        "color": "White",
+        "image": "products-d9e82ee5-420a-46a7-b34a-7cc205895686-1757450097125.png",
+        "_id": "68c08f72c68ce5617396d7a1"
+      }
+    ],
+    "sizes": ["512 GB", "256 GB", "128 GB"],
+    "category": {
+      "name": "Electronics"
+    },
+    "subCategory": {
+      "name": "Smartphones & Accessories"
+    },
+    "brand": {
+      "name": "Apple"
+    },
+    "ratingAverage": 1,
+    "quantityResidents": 0,
+    "createdAt": "2025-09-09T20:34:58.588Z",
+    "updatedAt": "2025-09-09T20:34:58.588Z",
+    "__v": 0
   }
 ]

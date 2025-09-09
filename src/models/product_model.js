@@ -31,12 +31,17 @@ const productSchema = new mongoose.Schema(
     priceAfterDiscount: {
       type: Number,
     },
-    image:[String],
-    colors: [String],
-    imageCover: {
-      type: String,
-      required: [true, "Product image cover is required"],
-    },
+    images: [
+      {
+        color: { type: String, required: true },
+        image: { type: String, required: true },
+      },
+    ],
+    sizes: [
+      {
+        type: String, // <-- changed from Number to String
+      },
+    ],
     category: {
       type: mongoose.Schema.ObjectId,
       ref: "Category",
@@ -58,7 +63,7 @@ const productSchema = new mongoose.Schema(
       max: [5, "Rating must be below or equal to 5.0"],
       default: 1,
     },
-    ratingQuantity: {
+    quantityResidents: {
       type: Number,
       default: 0,
     },

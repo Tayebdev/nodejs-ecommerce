@@ -1,8 +1,11 @@
 const sharp = require("sharp");
 const { v4: uuidv4 } = require("uuid");
 const asyncHandler = require("express-async-handler");
+const fs = require("fs");
+const path = require("path");
 
-exports.resizeImage = (width, height, folderName) =>
+
+exports.resizeImageOne = (width, height, folderName) =>
   asyncHandler(async (req, res, next) => {
     if (!req.file) {
       return next();
@@ -29,3 +32,31 @@ exports.resizeImage = (width, height, folderName) =>
 
     next();
   });
+exports.resizeImageMany = (width, height, folderName) =>
+  asyncHandler(async (req, res, next) => {
+    if (!req.files || req.files.length === 0) {
+      return next();
+    }
+
+    const uploadPath = path.join(__dirname, "..", "Uploads", folderName);
+    if (!fs.existsSync(uploadPath)) {
+      fs.mkdirSync(uploadPath, { recursive: true });
+    }
+
+    // Process each file
+    await Promise.all(
+      req.files.map(async (file, index) => {
+        const filename = `${folderName}-${uuidv4()}-${Date.now()}.png`;
+        await sharp(file.buffer)
+          .resize(width, height)
+          .png({ quality: 90 })
+          .toFile(path.join(uploadPath, filename));
+        // Save filename in file object for controller
+        file.filename = filename;
+        file.resizedPath = path.join(uploadPath, filename);
+      })
+    );
+
+    next();
+  });
+

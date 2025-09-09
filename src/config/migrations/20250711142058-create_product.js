@@ -1,9 +1,4 @@
 module.exports = {
-  /**
-   * @param db {import('mongodb').Db}
-   * @param client {import('mongodb').MongoClient}
-   * @returns {Promise<void>}
-   */
   async up(db, client) {
     await db.createCollection("Product", {
       validator: {
@@ -16,12 +11,11 @@ module.exports = {
             "sold",
             "price",
             "priceAfterDiscount",
-            "colors",
             "category",
             "subCategory",
             "brand",
             "ratingAverage",
-            "ratingQuantity",
+            "quantityResidents",
           ],
           properties: {
             title: {
@@ -33,7 +27,7 @@ module.exports = {
             description: {
               bsonType: "string",
               description: "Product description is required",
-              minLength: 3,
+              minLength: 20,
               maxLength: 500,
             },
             quantity: {
@@ -44,10 +38,6 @@ module.exports = {
               bsonType: "int",
               description: "Number of products sold",
             },
-            slug: {
-              bsonType: "string",
-              description: "Slug must be a string",
-            },
             price: {
               bsonType: "number",
               description: "Product price is required",
@@ -56,19 +46,21 @@ module.exports = {
               bsonType: "number",
               description: "Discounted price (if applicable)",
             },
-            colors: {
+            images: {
               bsonType: "array",
-              description: "Colors should be an array of strings",
+              description: "List of images with colors",
               items: {
-                bsonType: "string",
+                bsonType: "object",
+                required: ["color", "image"],
+                properties: {
+                  color: { bsonType: "string" },
+                  image: { bsonType: "string" },
+                },
               },
             },
-            imageCover: {
-              bsonType: "string",
-              description: "Product image cover is required",
-            },
-            image: {
+            sizes: {
               bsonType: "array",
+              description: "Available sizes (as strings)",
               items: {
                 bsonType: "string",
               },
@@ -91,9 +83,9 @@ module.exports = {
               minimum: 1.0,
               maximum: 5.0,
             },
-            ratingQuantity: {
+            quantityResidents: {
               bsonType: "int",
-              description: "Number of ratings",
+              description: "Number of residents (total ratings count)",
             },
           },
         },
@@ -101,11 +93,6 @@ module.exports = {
     });
   },
 
-  /**
-   * @param db {import('mongodb').Db}
-   * @param client {import('mongodb').MongoClient}
-   * @returns {Promise<void>}
-   */
   async down(db, client) {
     await db.collection("Product").drop();
   },

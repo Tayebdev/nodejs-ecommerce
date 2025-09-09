@@ -14,7 +14,7 @@ const {
   deleteBrand,
 } = require("../controllers/brand_controller");
 const { uploadImage } = require("../middlewares/imageMiddleware");
-const { resizeImage } = require("../middlewares/resizeMiddleware");
+const { resizeImageOne } = require("../middlewares/resizeMiddleware");
 const { verifyToken, allowedTo } = require("../middlewares/authMiddleware");
 
 router
@@ -24,7 +24,7 @@ router
     // verifyToken,
     // allowedTo("admin", "manager"),
     uploadImage().single("image"),
-    resizeImage(225, 225, "brands"),
+    resizeImageOne(96, 96, "brands"),
     createBrandValidator,
     createBrand
   );

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { uploadImage } = require("../middlewares/imageMiddleware");
-const { resizeImage } = require("../middlewares/resizeMiddleware");
+const { resizeImageOne } = require("../middlewares/resizeMiddleware");
 const {
   createUser,
   getAllUser,
@@ -24,7 +24,7 @@ router
   .route("/")
   .post(
     uploadImage().single("profileImg"),
-    resizeImage(96, 96, "users"),
+    resizeImageOne(96, 96, "users"),
     createUserValidator,
     createUser
   )

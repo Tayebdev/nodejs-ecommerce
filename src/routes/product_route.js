@@ -8,19 +8,27 @@ const {
   deleteProduct,
 } = require("../controllers/product_controller");
 const { verifyToken, allowedTo } = require("../middlewares/authMiddleware");
+const { uploadImage } = require("../middlewares/imageMiddleware");
+const { resizeImageMany } = require("../middlewares/resizeMiddleware");
+const {removeBgFromImages}=require('../middlewares/removeBackgroundMiddlware')
 
 const {
   createProductValidator,
   getProductValidator,
   updateProductValidator,
   deleteProductValidator,
+  validateUploadedImages
 } = require("../utils/validator/productValidator");
 
 router
   .route("/")
   .post(
-    verifyToken,
-    allowedTo("admin", "manager"),
+    // verifyToken,
+    // allowedTo("admin", "manager"),
+    uploadImage().array("images", 10),
+    removeBgFromImages,
+    validateUploadedImages,
+    resizeImageMany(256, 256, "products"),
     createProductValidator,
     createProduct
   )

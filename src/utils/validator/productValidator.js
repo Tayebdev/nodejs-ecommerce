@@ -1,8 +1,9 @@
-const { check, body } = require("express-validator");
+const { check } = require("express-validator");
 const { runValidation } = require("../../middlewares/validatorMiddleware");
 const CategoryModel = require("../../models/category_model");
 const subCategoryModel = require("../../models/subCategory_model");
 const BrandModel = require("../../models/brand_model");
+
 exports.createProductValidator = [
   check("title")
     .isLength({ min: 3 })
@@ -13,8 +14,8 @@ exports.createProductValidator = [
   check("description")
     .notEmpty()
     .withMessage("Product description is required")
-    .isLength({ max: 2000 })
-    .withMessage("Too long description"),
+    .isLength({ min: 20, max: 2000 })
+    .withMessage("Description must be between 20 and 2000 characters"),
 
   check("quantity")
     .notEmpty()
@@ -40,18 +41,14 @@ exports.createProductValidator = [
       }
       return true;
     }),
-
-  check("colors")
+  check("sizes")
     .optional()
     .isArray()
-    .withMessage("Colors should be an array of strings"),
-
-  check("imageCover").notEmpty().withMessage("Product imageCover is required"),
-
-  check("image")
+    .withMessage("Sizes must be an array of strings"),
+  check("sizes.*")
     .optional()
-    .isArray()
-    .withMessage("Images should be an array of strings"),
+    .isString()
+    .withMessage("Each size must be a string"),
 
   check("category")
     .notEmpty()
@@ -62,7 +59,7 @@ exports.createProductValidator = [
       return CategoryModel.findById(categoryId).then((category) => {
         if (!category) {
           return Promise.reject(
-            new Error(`No category for this id: ${categoryId}`)
+            new Error(`No category found for this id: ${categoryId}`)
           );
         }
       });
@@ -76,33 +73,37 @@ exports.createProductValidator = [
       return subCategoryModel.findById(subCategoryId).then((subCategory) => {
         if (!subCategory) {
           return Promise.reject(
-            new Error(`No subCategory for this id: ${subCategoryId}`)
+            new Error(`No subCategory found for this id: ${subCategoryId}`)
           );
         }
       });
     }),
 
   check("brand")
-    .optional()
+    .notEmpty()
+    .withMessage("Product must belong to a brand")
     .isMongoId()
     .withMessage("Invalid brand ID format")
     .custom((brandId) => {
       return BrandModel.findById(brandId).then((brand) => {
         if (!brand) {
-          return Promise.reject(new Error(`No brand for this id: ${brandId}`));
+          return Promise.reject(
+            new Error(`No brand found for this id: ${brandId}`)
+          );
         }
       });
     }),
-    
+
   check("ratingAverage")
     .optional()
     .isFloat({ min: 1, max: 5 })
     .withMessage("Rating must be between 1.0 and 5.0"),
 
-  check("ratingQuantity")
+  // ✅ quantityResidents replaces ratingQuantity
+  check("quantityResidents")
     .optional()
     .isNumeric()
-    .withMessage("Rating quantity must be a number"),
+    .withMessage("Quantity residents must be a number"),
 
   runValidation,
 ];
@@ -121,3 +122,13 @@ exports.deleteProductValidator = [
   check("id").isMongoId().withMessage("Invalid product ID format"),
   runValidation,
 ];
+
+exports.validateUploadedImages = (req, res, next) => {
+  if (!req.files || req.files.length === 0) {
+    return res.status(400).json({
+      status: "fail",
+      message: "You must upload at least one image",
+    });
+  }
+  next();
+};
