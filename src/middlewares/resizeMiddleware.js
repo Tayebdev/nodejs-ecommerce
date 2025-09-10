@@ -48,7 +48,7 @@ exports.resizeImageMany = (width, height, folderName) =>
       req.files.map(async (file, index) => {
         const filename = `${folderName}-${uuidv4()}-${Date.now()}.png`;
         await sharp(file.buffer)
-          .resize(width, height)
+          .resize(width, height,{ fit: "contain"})
           .png({ quality: 90 })
           .toFile(path.join(uploadPath, filename));
         // Save filename in file object for controller
