@@ -52,10 +52,24 @@ const getAllProduct = asyncHandler(async (req, res, next) => {
   });
 });
 
+const getProductBySubCategoryId = asyncHandler(async (req, res, next) => {
+  const doc = await productModel
+    .find({ subCategory: req.params.subCategoryId })
+  if (!doc || doc.length === 0) {
+    return next(new ErrorAPI("No products found", 404));
+  }
+  res.status(200).json({
+    status: "success",
+    data: doc,
+  });
+});
+
+
 module.exports = {
   createProduct,
   getAllProduct,
   getProductById,
   updateProduct,
   deleteProduct,
+  getProductBySubCategoryId,
 };

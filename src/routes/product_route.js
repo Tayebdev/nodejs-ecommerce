@@ -6,18 +6,21 @@ const {
   getProductById,
   updateProduct,
   deleteProduct,
+  getProductBySubCategoryId,
 } = require("../controllers/product_controller");
 const { verifyToken, allowedTo } = require("../middlewares/authMiddleware");
 const { uploadImage } = require("../middlewares/imageMiddleware");
 const { resizeImageMany } = require("../middlewares/resizeMiddleware");
-const {removeBgFromImages}=require('../middlewares/removeBackgroundMiddlware')
+const {
+  removeBgFromImages,
+} = require("../middlewares/removeBackgroundMiddlware");
 
 const {
   createProductValidator,
   getProductValidator,
   updateProductValidator,
   deleteProductValidator,
-  validateUploadedImages
+  validateUploadedImages,
 } = require("../utils/validator/productValidator");
 
 router
@@ -49,5 +52,7 @@ router
     deleteProductValidator,
     deleteProduct
   );
+
+router.route("/subCategoryId/:subCategoryId").get(getProductBySubCategoryId);
 
 module.exports = router;
