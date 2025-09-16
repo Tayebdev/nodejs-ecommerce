@@ -1,5 +1,4 @@
 const subCategoryModel = require("../models/subCategory_model");
-const slugify = require("slugify");
 const asyncHandler = require("express-async-handler");
 const ErrorAPI = require("../utils/ErrorAPI");
 const {
