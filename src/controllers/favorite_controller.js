@@ -1,4 +1,5 @@
 const favoriteModel = require("../models/favorite_model");
+const productModel = require("../models/product_model");
 const asyncHandler = require("express-async-handler");
 const ErrorAPI = require("../utils/ErrorAPI");
 const {
@@ -9,7 +10,19 @@ const {
   updateOne,
 } = require("./Factory_Handler");
 
-const createFavorite = createOne(favoriteModel);
+const createFavorite = asyncHandler(async (req, res) => {
+  const doc = new favoriteModel(req.body);
+  await productModel.updateOne(
+    { _id: req.body.productId },
+    { $set: { isFavorite: true } }
+  );
+  const savedDoc = await doc.save();
+
+  res.status(201).json({
+    status: "success",
+    data: savedDoc,
+  });
+});
 
 const getAllFavorite = getAll(favoriteModel);
 
@@ -39,15 +52,18 @@ const getProductFavoriteByUserId = asyncHandler(async (req, res, next) => {
 });
 
 const deleteFavoriteByProductId = asyncHandler(async (req, res, next) => {
-  const doc = await favoriteModel.findOneAndDelete({
-    productId: req.params.productId,
-  });
-  if (!doc || doc.length === 0) {
-    return next(new ErrorAPI(`Favorite model not found`), 404);
+  const { productId } = req.params;
+  const doc = await favoriteModel.findOneAndDelete({ productId });
+  if (!doc) {
+    return next(new ErrorAPI(`Favorite not found`, 404));
   }
+  await productModel.updateOne(
+    { _id: productId },
+    { $set: { isFavorite: false } }
+  );
   res.status(200).json({
     status: "Success",
-    message: `Favorite is deleted`,
+    message: `Favorite deleted successfully`,
     data: doc,
   });
 });
