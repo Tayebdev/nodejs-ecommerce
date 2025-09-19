@@ -37,11 +37,15 @@ const getProductFavoriteByUserId = asyncHandler(async (req, res, next) => {
     .find({ userId: req.params.userId })
     .populate({
       path: "productId",
-      select: "title description price images sizes brand category subCategory",
+      select: " ",
     });
 
   if (!result || result.length === 0) {
-    return next(new ErrorAPI("No Product found", 404));
+    return res.status(200).json({
+      message:"Favorite not found",
+      status: "failed",
+      data: result,
+    });
   }
 
   res.status(200).json({
