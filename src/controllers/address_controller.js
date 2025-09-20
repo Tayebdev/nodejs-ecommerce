@@ -20,7 +20,10 @@ const getAddressByUserId = asyncHandler(async (req, res, next) => {
   const addresses = await AddressModel.find({ userId: req.params.userId });
 
   if (!addresses || addresses.length === 0) {
-    return next(new ErrorAPI("No addresses found for this user", 404));
+    return res.status(200).json({
+    data: addresses,
+    message:"No addresses found for this user"
+  });
   }
 
   res.status(200).json({
