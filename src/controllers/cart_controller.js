@@ -23,7 +23,7 @@ const calcTotalCartPriceAfterDiscount = (cart) => {
 };
 
 const addProductToCart = asyncHandler(async (req, res, next) => {
-  const { productId, color, size, userId } = req.body;
+  const { productId, color, size, userId, quantity } = req.body;
 
   // 1) check if product exists
   const product = await productModel.findById(productId);
@@ -43,6 +43,7 @@ const addProductToCart = asyncHandler(async (req, res, next) => {
           product: productId,
           color,
           size,
+          quantity,
           price: product.price,
           priceAfterDiscount: product.priceAfterDiscount || undefined,
         },
