@@ -15,6 +15,7 @@ const authRouter = require("./routes/auth_route");
 const reviewRouter = require("./routes/review_route");
 const favoriteRouter = require("./routes/favorite_route");
 const addressRouter = require("./routes/address_route");
+const cartRouter = require("./routes/cart_route");
 
 const app = express();
 app.use("/uploads", express.static(path.join(__dirname, "Uploads")));
@@ -33,6 +34,7 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/review", reviewRouter);
 app.use("/api/v1/favorite", favoriteRouter);
 app.use("/api/v1/address", addressRouter);
+app.use("/api/v1/cart", cartRouter);
 
 app.use((req, res, next) => {
   next(new ErrorAPI(`Can't find ${req.originalUrl} on the server`, 400));

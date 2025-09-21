@@ -44,6 +44,10 @@ const addressSchema = new mongoose.Schema(
       trim: true,
       required: [true, "Country is required"],
     },
+    isSelected: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true, collection: "Address" }
 );

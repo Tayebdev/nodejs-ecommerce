@@ -8,6 +8,7 @@ const {
   updateAddress,
   deleteAddress,
   getAddressByUserId,
+  selectedAddress,
 } = require("../controllers/address_controller");
 
 const {
@@ -29,5 +30,7 @@ router
   .get(getAddressValidator, getAddressById)
   .put(updateAddressValidator, updateAddress)
   .delete(deleteAddressValidator, deleteAddress);
+
+router.route("/selectedAddress/:id").put(selectedAddress);
 
 module.exports = router;
