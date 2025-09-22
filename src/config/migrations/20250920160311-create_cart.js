@@ -31,6 +31,10 @@ module.exports = {
                     bsonType: "string",
                     description: "Optional color for the product",
                   },
+                  nameBrand: {
+                    bsonType: "string",
+                    description: "Brand Name is required",
+                  },
                   size: {
                     bsonType: "string",
                     description: "Optional size for the product",

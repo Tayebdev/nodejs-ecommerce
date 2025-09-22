@@ -17,6 +17,9 @@ const CartSchema = new mongoose.Schema(
         color: {
           type: String,
         },
+        nameBrand: {
+          type: String,
+        },
         size: {
           type: String,
         },

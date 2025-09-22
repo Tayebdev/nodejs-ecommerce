@@ -26,7 +26,9 @@ const addProductToCart = asyncHandler(async (req, res, next) => {
   const { productId, color, size, userId, quantity } = req.body;
 
   // 1) check if product exists
-  const product = await productModel.findById(productId);
+  const product = await productModel
+  .findById(productId)
+  .populate({ path: "brand", select: "name" });
   if (!product) {
     return next(new ErrorAPI(`No product found with ID ${productId}`, 404));
   }
@@ -45,6 +47,7 @@ const addProductToCart = asyncHandler(async (req, res, next) => {
           size,
           quantity,
           price: product.price,
+          nameBrand:product.brand.name,
           priceAfterDiscount: product.priceAfterDiscount || undefined,
         },
       ],
@@ -68,6 +71,7 @@ const addProductToCart = asyncHandler(async (req, res, next) => {
         color,
         size,
         price: product.price,
+        nameBrand:product.brand.name,
         priceAfterDiscount: product.priceAfterDiscount || undefined,
       });
     }
@@ -84,7 +88,10 @@ const addProductToCart = asyncHandler(async (req, res, next) => {
 });
 
 const getLoggedUserCart = asyncHandler(async (req, res, next) => {
-  const cart = await cartModel.findOne({ user: req.params.userId });
+  const cart = await cartModel.findOne({ user: req.params.userId }).populate({
+    path: "cartItems.product",
+    select: "title images",
+  });
 
   if (!cart) {
     return next(

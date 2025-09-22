@@ -54,7 +54,11 @@ const getAllProduct = asyncHandler(async (req, res, next) => {
 
 const getProductBySubCategoryId = asyncHandler(async (req, res, next) => {
   const doc = await productModel
-    .find({ subCategory: req.params.subCategoryId })
+    .find({
+      subCategory: req.params.subCategoryId,
+    })
+    .populate({ path: "brand", select: "name" });
+    
   if (!doc || doc.length === 0) {
     return next(new ErrorAPI("No products found", 404));
   }
@@ -63,7 +67,6 @@ const getProductBySubCategoryId = asyncHandler(async (req, res, next) => {
     data: doc,
   });
 });
-
 
 module.exports = {
   createProduct,
